@@ -23,6 +23,9 @@
       </td></tr><tr><td></td><td><button onclick="okBtnDecryptFile();">Decrypt!</button></td></tr></tr></table></div>
 
 <script>
+   if (window.location.protocol != "https:")
+   window.location.href = "https:" + window.location.href.substring(window.location.protocol.length);
+    
       var fileInput = document.getElementById('fileInput');
       fileInput.addEventListener('change', function(e) {
          var file = fileInput.files[0];
