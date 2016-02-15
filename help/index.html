@@ -82,7 +82,8 @@ Right click on OpenPGP and then click "Generate key pair".
 <br><br><img src="generate-keypair-menu.png" alt=""><br><hr><br>
 In the "Generate new key pair" window check if all the fields are correctly filled by the server. Correct when necessary. See the table below:<br><br>
 <table>
-<tr><td>User ID</td><td>example: Firstname Lastname &lt;myemail@example.com&gt;<br>Please follow this example, so people can automatically find your email address when using your public key.</td></tr>
+<tr><td>Name</td><td>example: Firstname Lastname <br>Your name. This will be used as part of the User ID of your new key pair.</td></tr>
+<tr><td>Email address</td><td>example: lellison@redhat.com,jwhitehurst@oracle.com<br>One or more email adresses you want to use with your new key pair.<br></td></tr>
 <tr><td>Passphrase</td><td>
 <ul>
 <li>20 to 30 characters or more</li>
@@ -163,13 +164,10 @@ If you want to attach encrypted documents to your mail, you must first encrypt t
 <br><img src="file-encrypt-dialog.png" alt=""><br>
 <br>If you receive an attachment that was encrypted using Zimbra OpenPGP Zimlet, you must first download the attachment to your local computer. Then use the Zimlet menu 'Decrypt file'.<br>
 <br><img src="file-decrypt-dialog.png" alt=""><br>
-<br>When sending encrypted attachments to persons that do not have Zimbra OpenPGP Zimlet, you can refer them to the <br><a href="https://barrydegraaff.github.io/" target="_blank">Zimbra OpenPGP Zimlet - Web Services</a>. If you prefer, you can also <a href="https://github.com/barrydegraaff/barrydegraaff.github.io/archive/0.0.1.zip">decrypt off-line</a>.<br>
-<br><img src="file-decrypt-web-service.png" alt=""><br><hr><br>
-
 
 <br><br></section><section id="thunderbird-enigmail">
 <h1>Reading messages encrypted/signed with Thunderbird/Enigmail</h1>
-OpenPGP/MIME encrypted messages using RFC 3156 implemented in Thunderbird/Enigmail can be decrypted and verified by this Zimlet. This is beta functionality text/plain, text/html and attachment message parts are supported.<br>
+OpenPGP/MIME encrypted messages using RFC 3156 implemented in Thunderbird/Enigmail can be decrypted and verified by this Zimlet. This is beta functionality. Plain text messages and attachments are supported. HTML formatted messages are converted to plain text.<br>
 <br><img src="thunderbird-enigmail-support.png" alt=""><br><hr><br>
 
 
@@ -191,7 +189,7 @@ It is best to use a different communication method than the one that was used to
 <li>PayPal: <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&amp;business=info%40barrydegraaff%2etk&amp;lc=US&amp;item_name=Zimbra%20OpenPGP%20Zimlet&amp;no_note=0&amp;currency_code=EUR&amp;bn=PP%2dDonationsBF%3abtn_donateCC_LG%2egif%3aNonHostedGuest">info@barrydegraaff.tk</a></li>
 <li>Bank transfer: IBAN NL55ABNA0623226413 ; BIC ABNANL2A</li>
 </ul>
-Please report <a href="https://github.com/barrydegraaff/pgp-zimlet/issues">bugs</a>
+Please report <a href="https://github.com/Zimbra-Community/pgp-zimlet/issues">bugs</a>
  on Github.
 <br><br><b>Credits</b>
 <br><ul><li><a href="http://www.premierheart.com/">Michael Graziano</a> <small>enhancements</small>
@@ -205,7 +203,7 @@ Please report <a href="https://github.com/barrydegraaff/pgp-zimlet/issues">bugs<
 
 <br><br></section><section id="licenses">
 <h1>License and third party FOSS libraries</h1>
-Copyright (C) 2014-2015&nbsp; Barry de Graaff 
+Copyright (C) 2014-2016&nbsp; Barry de Graaff 
 <br><br>This program is free software: you can redistribute it and/or modify
 <br> it under the terms of the GNU General Public License as published by
 <br> the Free Software Foundation, either version 2 of the License, or
