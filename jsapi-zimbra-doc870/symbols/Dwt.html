@@ -1,0 +1,4726 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="generator" content="JsDoc Toolkit" />
+		
+		<title>Zimlet JavaScript API Reference - Dwt</title>
+
+		<style type="text/css">
+			/*
+ * ***** BEGIN LICENSE BLOCK *****
+ * Zimbra Collaboration Suite Web Client
+ * Copyright (C) 2010, 2013, 2014, 2016 Synacor, Inc.
+ *
+ * The contents of this file are subject to the Common Public Attribution License Version 1.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at: https://www.zimbra.com/license
+ * The License is based on the Mozilla Public License Version 1.1 but Sections 14 and 15
+ * have been added to cover use of software over a computer network and provide for limited attribution
+ * for the Original Developer. In addition, Exhibit A has been modified to be consistent with Exhibit B.
+ *
+ * Software distributed under the License is distributed on an "AS IS" basis,
+ * WITHOUT WARRANTY OF ANY KIND, either express or implied.
+ * See the License for the specific language governing rights and limitations under the License.
+ * The Original Code is Zimbra Open Source Web Client.
+ * The Initial Developer of the Original Code is Zimbra, Inc.  All rights to the Original Code were
+ * transferred by Zimbra, Inc. to Synacor, Inc. on September 14, 2015.
+ *
+ * All portions of the code are Copyright (C) 2010, 2013, 2014, 2016 Synacor, Inc. All Rights Reserved.
+ * ***** END LICENSE BLOCK *****
+ */
+/* default.css */
+body
+{
+	font: 12px "Lucida Grande", Tahoma, Arial, Helvetica, sans-serif;
+	width: 800px;
+}
+
+h1
+{
+	font-size: 150%;
+	font-weight: bold;
+	padding: 0;
+	margin: 1em 0 0 .3em;
+}
+
+hr
+{
+	border: none 0;
+	border-top: 1px solid #7F8FB1;
+	height: 1px;
+}
+
+pre.code
+{
+	display: block;
+	padding: 8px;
+	border: 1px dashed #ccc;
+}
+
+#index
+{
+	margin-top: 24px;
+	float: left;
+	left: 8px;
+	background-color: #F3F3F3;
+	padding: 8px;
+}
+
+#content
+{
+	padding-left: 10px;
+	width: 600px;
+}
+
+.classList
+{
+	list-style-type: none;
+	padding: 0;
+	margin: 0 0 0 8px;
+	font-family: arial, sans-serif;
+	font-size: 1em;
+	overflow: auto;
+}
+
+.classList li
+{
+	padding: 0;
+	margin: 0 0 8px 0;
+}
+
+.summaryTable { width: 100%; }
+
+h1.classTitle
+{
+	font-size:170%;
+	line-height:130%;
+}
+
+h2 { font-size: 110%; }
+caption, div.sectionTitle
+{
+	background-color: #7F8FB1;
+	color: #fff;
+	font-size:130%;
+	text-align: left;
+	padding: 2px 6px 2px 6px;
+	border: 1px #7F8FB1 solid;
+}
+
+div.sectionTitle { margin-bottom: 8px; }
+.summaryTable thead { display: none; }
+
+.summaryTable td
+{
+	vertical-align: top;
+	padding: 4px;
+	border-bottom: 1px #7F8FB1 solid;
+	border-right: 1px #7F8FB1 solid;
+}
+
+/*col#summaryAttributes {}*/
+.summaryTable td.attributes
+{
+	border-left: 1px #7F8FB1 solid;
+	width: 140px;
+	text-align: right;
+}
+
+td.attributes, .fixedFont
+{
+	line-height: 15px;
+	color: #002EBE;
+	font-family: "Courier New",Courier,monospace;
+	font-size: 13px;
+}
+
+.summaryTable td.nameDescription
+{
+	text-align: left;
+	font-size: 13px;
+	line-height: 15px;
+}
+
+.summaryTable td.nameDescription, .description
+{
+	line-height: 15px;
+	padding: 4px;
+	padding-left: 4px;
+}
+
+.summaryTable { margin-bottom: 8px; }
+
+ul.inheritsList
+{
+	list-style: square;
+	margin-left: 20px;
+	padding-left: 0;
+}
+
+.detailList {
+	margin-left: 20px; 
+	line-height: 15px;
+}
+.detailList dt { margin-left: 20px; }
+
+.detailList .heading
+{
+	font-weight: bold;
+	padding-bottom: 6px;
+	margin-left: 0;
+}
+
+.light, td.attributes, .light a:link, .light a:visited
+{
+	color: #777;
+	font-style: italic;
+}
+
+.fineprint
+{
+	text-align: right;
+	font-size: 10px;
+}
+/*------------------------------------------------------------------------------
+  STRUCTURE
+------------------------------------------------------------------------------*/
+.container {
+	margin:0 auto;
+}
+.super-nav {
+	background: #3d3d3d url(./images/super_nav_bg.png) 0 0 repeat-x;
+	border-bottom: 1px solid #FFF;
+}
+.super-nav ul {
+	margin-bottom: 1px;
+}
+.super-nav li {
+	background: url(./images/super_nav_separator.png) 100% 60% no-repeat;
+	font-family: Arial, Verdana, sans-serif;
+	font-size: 11px;
+	font-weight: bold;
+	color: #e1e1e1;
+	display: inline;
+	line-height: 23px;
+	padding-right: 8px;
+}
+.super-nav li.last {
+	background: none;
+	padding-right: 0;
+}
+.super-nav li a {
+	color: #e1e1e1;
+	text-decoration: none;
+	padding-right: 4px;
+}
+.super-nav li a:hover {
+	text-decoration: none;
+	color: #FFF;
+}
+		</style>
+	</head>
+
+	<body>
+		<table width="100%" border="0" cellpadding="0" cellspacing="0">
+		<tr>
+			<td colspan="2" valign="top">
+<!-- ============================== header ================================= -->	
+		<!-- begin static/header.html -->
+		<!--
+ * ***** BEGIN LICENSE BLOCK *****
+ * Zimbra Collaboration Suite Web Client
+ * Copyright (C) 2010, 2014, 2016 Synacor, Inc.
+ *
+ * The contents of this file are subject to the Common Public Attribution License Version 1.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at: https://www.zimbra.com/license
+ * The License is based on the Mozilla Public License Version 1.1 but Sections 14 and 15
+ * have been added to cover use of software over a computer network and provide for limited attribution
+ * for the Original Developer. In addition, Exhibit A has been modified to be consistent with Exhibit B.
+ *
+ * Software distributed under the License is distributed on an "AS IS" basis,
+ * WITHOUT WARRANTY OF ANY KIND, either express or implied.
+ * See the License for the specific language governing rights and limitations under the License.
+ * The Original Code is Zimbra Open Source Web Client.
+ * The Initial Developer of the Original Code is Zimbra, Inc.  All rights to the Original Code were
+ * transferred by Zimbra, Inc. to Synacor, Inc. on September 14, 2015.
+ *
+ * All portions of the code are Copyright (C) 2010, 2014, 2016 Synacor, Inc. All Rights Reserved.
+ * ***** END LICENSE BLOCK *****
+-->
+
+		<!-- end static/header.html -->
+			</td>
+		</tr>
+		<tr>
+			<td valign="top">
+<!-- ============================== classes index ============================ -->
+		<div id="index">
+			<!-- begin publish.classesIndex -->
+			<div align="center">
+<a href="../index.html">All Classes</a>
+</div>
+<hr />
+<h2>Class List</h2>
+<ul class="classList">
+	
+	<li></li>
+	
+	<li><a href="../symbols/Object.html">Object</a></li>
+	
+	<li><a href="../symbols/Function.html">Function</a></li>
+	
+	<li><a href="../symbols/AjxCallback.html">ajax.boot.AjxCallback</a></li>
+	
+	<li><a href="../symbols/AjxDispatcher.html">ajax.boot.AjxDispatcher</a></li>
+	
+	<li><a href="../symbols/AjxEnv.html">ajax.boot.AjxEnv</a></li>
+	
+	<li><a href="../symbols/AjxTemplate.html">ajax.boot.AjxTemplate</a></li>
+	
+	<li><a href="../symbols/AjxColor.html">ajax.core.AjxColor</a></li>
+	
+	<li><a href="../symbols/AjxException.html">ajax.core.AjxException</a></li>
+	
+	<li><a href="../symbols/Dwt.html">ajax.dwt.core.Dwt</a></li>
+	
+	<li><a href="../symbols/DwtException.html">ajax.dwt.core.DwtException</a></li>
+	
+	<li><a href="../symbols/DwtId.html">ajax.dwt.core.DwtId</a></li>
+	
+	<li><a href="../symbols/DwtDragBox.html">ajax.dwt.dnd.DwtDragBox</a></li>
+	
+	<li><a href="../symbols/DwtDragEvent.html">ajax.dwt.dnd.DwtDragEvent</a></li>
+	
+	<li><a href="../symbols/DwtDragSource.html">ajax.dwt.dnd.DwtDragSource</a></li>
+	
+	<li><a href="../symbols/DwtDropEvent.html">ajax.dwt.dnd.DwtDropEvent</a></li>
+	
+	<li><a href="../symbols/DwtDropTarget.html">ajax.dwt.dnd.DwtDropTarget</a></li>
+	
+	<li><a href="../symbols/DwtEvent.html">ajax.dwt.events.DwtEvent</a></li>
+	
+	<li><a href="../symbols/DwtOutsideMouseEventMgr.html">ajax.dwt.events.DwtOutsideMouseEventMgr</a></li>
+	
+	<li><a href="../symbols/DwtPoint.html">ajax.dwt.graphics.DwtPoint</a></li>
+	
+	<li><a href="../symbols/DwtRectangle.html">ajax.dwt.graphics.DwtRectangle</a></li>
+	
+	<li><a href="../symbols/DwtKeyMap.html">ajax.dwt.keyboard.DwtKeyMap</a></li>
+	
+	<li><a href="../symbols/DwtTabGroup.html">ajax.dwt.keyboard.DwtTabGroup</a></li>
+	
+	<li><a href="../symbols/DwtAccordion.html">ajax.dwt.widgets.DwtAccordion</a></li>
+	
+	<li><a href="../symbols/DwtAccordionItem.html">ajax.dwt.widgets.DwtAccordionItem</a></li>
+	
+	<li><a href="../symbols/DwtAlert.html">ajax.dwt.widgets.DwtAlert</a></li>
+	
+	<li><a href="../symbols/DwtBaseDialog.html">ajax.dwt.widgets.DwtBaseDialog</a></li>
+	
+	<li><a href="../symbols/DwtBorderlessButton.html">ajax.dwt.widgets.DwtBorderlessButton</a></li>
+	
+	<li><a href="../symbols/DwtButton.html">ajax.dwt.widgets.DwtButton</a></li>
+	
+	<li><a href="../symbols/DwtButtonColorPicker.html">ajax.dwt.widgets.DwtButtonColorPicker</a></li>
+	
+	<li><a href="../symbols/DwtCalendar.html">ajax.dwt.widgets.DwtCalendar</a></li>
+	
+	<li><a href="../symbols/DwtCheckbox.html">ajax.dwt.widgets.DwtCheckbox</a></li>
+	
+	<li><a href="../symbols/DwtChooser.html">ajax.dwt.widgets.DwtChooser</a></li>
+	
+	<li><a href="../symbols/DwtChooserListView.html">ajax.dwt.widgets.DwtChooserListView</a></li>
+	
+	<li><a href="../symbols/DwtColorPicker.html">ajax.dwt.widgets.DwtColorPicker</a></li>
+	
+	<li><a href="../symbols/DwtComboBox.html">ajax.dwt.widgets.DwtComboBox</a></li>
+	
+	<li><a href="../symbols/DwtComposite.html">ajax.dwt.widgets.DwtComposite</a></li>
+	
+	<li><a href="../symbols/DwtConfirmDialog.html">ajax.dwt.widgets.DwtConfirmDialog</a></li>
+	
+	<li><a href="../symbols/DwtControl.html">ajax.dwt.widgets.DwtControl</a></li>
+	
+	<li><a href="../symbols/DwtDialog_ButtonDescriptor.html">ajax.dwt.widgets.DwtDialog_ButtonDescriptor</a></li>
+	
+	<li><a href="../symbols/DwtDialog.html">ajax.dwt.widgets.DwtDialog</a></li>
+	
+	<li><a href="../symbols/DwtHeaderTreeItem.html">ajax.dwt.widgets.DwtHeaderTreeItem</a></li>
+	
+	<li><a href="../symbols/DwtIframe.html">ajax.dwt.widgets.DwtIframe</a></li>
+	
+	<li><a href="../symbols/DwtInputField.html">ajax.dwt.widgets.DwtInputField</a></li>
+	
+	<li><a href="../symbols/DwtLabel.html">ajax.dwt.widgets.DwtLabel</a></li>
+	
+	<li><a href="../symbols/DwtListView.html">ajax.dwt.widgets.DwtListView</a></li>
+	
+	<li><a href="../symbols/DwtMenu.html">ajax.dwt.widgets.DwtMenu</a></li>
+	
+	<li><a href="../symbols/DwtMenuItem.html">ajax.dwt.widgets.DwtMenuItem</a></li>
+	
+	<li><a href="../symbols/DwtMessageComposite.html">ajax.dwt.widgets.DwtMessageComposite</a></li>
+	
+	<li><a href="../symbols/DwtMessageDialog.html">ajax.dwt.widgets.DwtMessageDialog</a></li>
+	
+	<li><a href="../symbols/DwtOptionDialog.html">ajax.dwt.widgets.DwtOptionDialog</a></li>
+	
+	<li><a href="../symbols/DwtPasswordField.html">ajax.dwt.widgets.DwtPasswordField</a></li>
+	
+	<li><a href="../symbols/DwtProgressBar.html">ajax.dwt.widgets.DwtProgressBar</a></li>
+	
+	<li><a href="../symbols/DwtPropertyPage.html">ajax.dwt.widgets.DwtPropertyPage</a></li>
+	
+	<li><a href="../symbols/DwtRadioButton.html">ajax.dwt.widgets.DwtRadioButton</a></li>
+	
+	<li><a href="../symbols/DwtSash.html">ajax.dwt.widgets.DwtSash</a></li>
+	
+	<li><a href="../symbols/DwtSelectMenu.html">ajax.dwt.widgets.DwtSelectMenu</a></li>
+	
+	<li><a href="../symbols/DwtSelectOption.html">ajax.dwt.widgets.DwtSelectOption</a></li>
+	
+	<li><a href="../symbols/DwtSelectMenuItem.html">ajax.dwt.widgets.DwtSelectMenuItem</a></li>
+	
+	<li><a href="../symbols/DwtSelect.html">ajax.dwt.widgets.DwtSelect</a></li>
+	
+	<li><a href="../symbols/DwtShell.html">ajax.dwt.widgets.DwtShell</a></li>
+	
+	<li><a href="../symbols/DwtSlider.html">ajax.dwt.widgets.DwtSlider</a></li>
+	
+	<li><a href="../symbols/DwtSoundPlugin.html">ajax.dwt.widgets.DwtSoundPlugin</a></li>
+	
+	<li><a href="../symbols/DwtSpinner.html">ajax.dwt.widgets.DwtSpinner</a></li>
+	
+	<li><a href="../symbols/DwtTabView.html">ajax.dwt.widgets.DwtTabView</a></li>
+	
+	<li><a href="../symbols/DwtTabButton.html">ajax.dwt.widgets.DwtTabButton</a></li>
+	
+	<li><a href="../symbols/DwtTabBar.html">ajax.dwt.widgets.DwtTabBar</a></li>
+	
+	<li><a href="../symbols/DwtTabViewPage.html">ajax.dwt.widgets.DwtTabViewPage</a></li>
+	
+	<li><a href="../symbols/DwtText.html">ajax.dwt.widgets.DwtText</a></li>
+	
+	<li><a href="../symbols/DwtToolBarButton.html">ajax.dwt.widgets.DwtToolBarButton</a></li>
+	
+	<li><a href="../symbols/DwtToolBar.html">ajax.dwt.widgets.DwtToolBar</a></li>
+	
+	<li><a href="../symbols/DwtTree.html">ajax.dwt.widgets.DwtTree</a></li>
+	
+	<li><a href="../symbols/DwtTreeItem.html">ajax.dwt.widgets.DwtTreeItem</a></li>
+	
+	<li><a href="../symbols/AjxListener.html">ajax.events.AjxListener</a></li>
+	
+	<li><a href="../symbols/AjxRpc.html">ajax.net.AjxRpc</a></li>
+	
+	<li><a href="../symbols/AjxRpcRequest.html">ajax.net.AjxRpcRequest</a></li>
+	
+	<li><a href="../symbols/AjxSoapDoc.html">ajax.soap.AjxSoapDoc</a></li>
+	
+	<li><a href="../symbols/AjxClipboard.html">ajax.util.AjxClipboard</a></li>
+	
+	<li><a href="../symbols/AjxEmailAddress.html">ajax.util.AjxEmailAddress</a></li>
+	
+	<li><a href="../symbols/AjxStringUtil.html">ajax.util.AjxStringUtil</a></li>
+	
+	<li><a href="../symbols/AjxMessageFormat.html">ajax.util.AjxMessageFormat</a></li>
+	
+	<li><a href="../symbols/AjxNumberFormat.html">ajax.util.AjxNumberFormat</a></li>
+	
+	<li><a href="../symbols/AjxChoiceFormat.html">ajax.util.AjxChoiceFormat</a></li>
+	
+	<li><a href="../symbols/AjxDateFormat.html">ajax.util.AjxDateFormat</a></li>
+	
+	<li><a href="../symbols/AjxTimezone.html">ajax.util.AjxTimezone</a></li>
+	
+	<li><a href="../symbols/AjxVector.html">ajax.util.AjxVector</a></li>
+	
+	<li><a href="../symbols/AjxXmlDoc.html">ajax.xml.AjxXmlDoc</a></li>
+	
+	<li><a href="../symbols/ZmErrorDialog.html">zimbra.common.ZmErrorDialog</a></li>
+	
+	<li><a href="../symbols/ZmBatchCommand.html">zimbra.csfe.ZmBatchCommand</a></li>
+	
+	<li><a href="../symbols/ZmCsfeCommand.html">zimbra.csfe.ZmCsfeCommand</a></li>
+	
+	<li><a href="../symbols/ZmCsfeException.html">zimbra.csfe.ZmCsfeException</a></li>
+	
+	<li><a href="../symbols/ZmCsfeResult.html">zimbra.csfe.ZmCsfeResult</a></li>
+	
+	<li><a href="../symbols/ZmAddrBookTreeController.html">zimbraMail.abook.controller.ZmAddrBookTreeController</a></li>
+	
+	<li><a href="../symbols/ZmContactController.html">zimbraMail.abook.controller.ZmContactController</a></li>
+	
+	<li><a href="../symbols/ZmContactListController.html">zimbraMail.abook.controller.ZmContactListController</a></li>
+	
+	<li><a href="../symbols/ZmAddrBook.html">zimbraMail.abook.model.ZmAddrBook</a></li>
+	
+	<li><a href="../symbols/ZmContact.html">zimbraMail.abook.model.ZmContact</a></li>
+	
+	<li><a href="../symbols/ZmContactList.html">zimbraMail.abook.model.ZmContactList</a></li>
+	
+	<li><a href="../symbols/ZmContactGroupMenu.html">zimbraMail.abook.view.ZmContactGroupMenu</a></li>
+	
+	<li><a href="../symbols/ZmContactPicker.html">zimbraMail.abook.view.ZmContactPicker</a></li>
+	
+	<li><a href="../symbols/ZmContactAlphabetBar.html">zimbraMail.abook.view.ZmContactAlphabetBar</a></li>
+	
+	<li><a href="../symbols/ZmContactsBaseView.html">zimbraMail.abook.view.ZmContactsBaseView</a></li>
+	
+	<li><a href="../symbols/ZmContactSearch.html">zimbraMail.abook.view.ZmContactSearch</a></li>
+	
+	<li><a href="../symbols/ZmContactsHelper.html">zimbraMail.abook.view.ZmContactsHelper</a></li>
+	
+	<li><a href="../symbols/ZmContactSimpleView.html">zimbraMail.abook.view.ZmContactSimpleView</a></li>
+	
+	<li><a href="../symbols/ZmContactSplitView.html">zimbraMail.abook.view.ZmContactSplitView</a></li>
+	
+	<li><a href="../symbols/ZmEditContactView.html">zimbraMail.abook.view.ZmEditContactView</a></li>
+	
+	<li><a href="../symbols/ZmDlMembersTabView.html">zimbraMail.abook.view.ZmDlMembersTabView</a></li>
+	
+	<li><a href="../symbols/ZmDlPropertiesTabView.html">zimbraMail.abook.view.ZmDlPropertiesTabView</a></li>
+	
+	<li><a href="../symbols/ZmGroupView.html">zimbraMail.abook.view.ZmGroupView</a></li>
+	
+	<li><a href="../symbols/ZmNewAddrBookDialog.html">zimbraMail.abook.view.ZmNewAddrBookDialog</a></li>
+	
+	<li><a href="../symbols/ZmNewContactGroupDialog.html">zimbraMail.abook.view.ZmNewContactGroupDialog</a></li>
+	
+	<li><a href="../symbols/ZmContactsApp.html">zimbraMail.abook.ZmContactsApp</a></li>
+	
+	<li><a href="../symbols/ZmBriefcaseController.html">zimbraMail.briefcase.controller.ZmBriefcaseController</a></li>
+	
+	<li><a href="../symbols/ZmBriefcaseTreeController.html">zimbraMail.briefcase.controller.ZmBriefcaseTreeController</a></li>
+	
+	<li><a href="../symbols/ZmBriefcase.html">zimbraMail.briefcase.model.ZmBriefcase</a></li>
+	
+	<li><a href="../symbols/ZmBriefcaseItem.html">zimbraMail.briefcase.model.ZmBriefcaseItem</a></li>
+	
+	<li><a href="../symbols/ZmBriefcaseBaseItem.html">zimbraMail.briefcase.model.ZmBriefcaseBaseItem</a></li>
+	
+	<li><a href="../symbols/ZmDocletMgr.html">zimbraMail.briefcase.model.ZmDocletMgr</a></li>
+	
+	<li><a href="../symbols/ZmBriefcaseTabView.html">zimbraMail.briefcase.view.dialog.ZmBriefcaseTabView</a></li>
+	
+	<li><a href="../symbols/ZmBriefcaseBaseView.html">zimbraMail.briefcase.view.ZmBriefcaseBaseView</a></li>
+	
+	<li><a href="../symbols/ZmBriefcaseIconView.html">zimbraMail.briefcase.view.ZmBriefcaseIconView</a></li>
+	
+	<li><a href="../symbols/ZmBriefcaseTreeView.html">zimbraMail.briefcase.view.ZmBriefcaseTreeView</a></li>
+	
+	<li><a href="../symbols/ZmDetailListView.html">zimbraMail.briefcase.view.ZmDetailListView</a></li>
+	
+	<li><a href="../symbols/ZmNewBriefcaseDialog.html">zimbraMail.briefcase.view.ZmNewBriefcaseDialog</a></li>
+	
+	<li><a href="../symbols/ZmPreviewView.html">zimbraMail.briefcase.view.ZmPreviewView</a></li>
+	
+	<li><a href="../symbols/ZmBriefcaseApp.html">zimbraMail.briefcase.ZmBriefcaseApp</a></li>
+	
+	<li><a href="../symbols/ZmApptComposeController.html">zimbraMail.calendar.controller.ZmApptComposeController</a></li>
+	
+	<li><a href="../symbols/ZmApptController.html">zimbraMail.calendar.controller.ZmApptController</a></li>
+	
+	<li><a href="../symbols/ZmCalendarTreeController.html">zimbraMail.calendar.controller.ZmCalendarTreeController</a></li>
+	
+	<li><a href="../symbols/ZmCalItemComposeController.html">zimbraMail.calendar.controller.ZmCalItemComposeController</a></li>
+	
+	<li><a href="../symbols/ZmCalViewController.html">zimbraMail.calendar.controller.ZmCalViewController</a></li>
+	
+	<li><a href="../symbols/ZmReminderController.html">zimbraMail.calendar.controller.ZmReminderController</a></li>
+	
+	<li><a href="../symbols/ZmAppt.html">zimbraMail.calendar.model.ZmAppt</a></li>
+	
+	<li><a href="../symbols/ZmApptList.html">zimbraMail.calendar.model.ZmApptList</a></li>
+	
+	<li><a href="../symbols/ZmCalBaseItem.html">zimbraMail.calendar.model.ZmCalBaseItem</a></li>
+	
+	<li><a href="../symbols/ZmCalendar.html">zimbraMail.calendar.model.ZmCalendar</a></li>
+	
+	<li><a href="../symbols/ZmCalItem.html">zimbraMail.calendar.model.ZmCalItem</a></li>
+	
+	<li><a href="../symbols/ZmRecurrence.html">zimbraMail.calendar.model.ZmRecurrence</a></li>
+	
+	<li><a href="../symbols/ZmResource.html">zimbraMail.calendar.model.ZmResource</a></li>
+	
+	<li><a href="../symbols/ZmResourceList.html">zimbraMail.calendar.model.ZmResourceList</a></li>
+	
+	<li><a href="../symbols/ZmApptAssistantView.html">zimbraMail.calendar.view.ZmApptAssistantView</a></li>
+	
+	<li><a href="../symbols/ZmApptComposeView.html">zimbraMail.calendar.view.ZmApptComposeView</a></li>
+	
+	<li><a href="../symbols/ZmApptDeleteNotifyDialog.html">zimbraMail.calendar.view.ZmApptDeleteNotifyDialog</a></li>
+	
+	<li><a href="../symbols/ZmApptQuickAddDialog.html">zimbraMail.calendar.view.ZmApptQuickAddDialog</a></li>
+	
+	<li><a href="../symbols/ZmApptRecurDialog.html">zimbraMail.calendar.view.ZmApptRecurDialog</a></li>
+	
+	<li><a href="../symbols/ZmAttendeePicker.html">zimbraMail.calendar.view.ZmAttendeePicker</a></li>
+	
+	<li><a href="../symbols/ZmWorkHours.html">zimbraMail.calendar.view.ZmWorkHours</a></li>
+	
+	<li><a href="../symbols/ZmCalViewMgr.html">zimbraMail.calendar.view.ZmCalViewMgr</a></li>
+	
+	<li><a href="../symbols/ZmFreeBusySchedulerView.html">zimbraMail.calendar.view.ZmFreeBusySchedulerView</a></li>
+	
+	<li><a href="../symbols/ZmLocationAssistantView.html">zimbraMail.calendar.view.ZmLocationAssistantView</a></li>
+	
+	<li><a href="../symbols/ZmLocationSuggestionView.html">zimbraMail.calendar.view.ZmLocationSuggestionView</a></li>
+	
+	<li><a href="../symbols/ZmResolveLocationConflictDialog.html">zimbraMail.calendar.view.ZmResolveLocationConflictDialog</a></li>
+	
+	<li><a href="../symbols/ZmResolveLocationView.html">zimbraMail.calendar.view.ZmResolveLocationView</a></li>
+	
+	<li><a href="../symbols/ZmScheduleAssistantView.html">zimbraMail.calendar.view.ZmScheduleAssistantView</a></li>
+	
+	<li><a href="../symbols/ZmSuggestionsView.html">zimbraMail.calendar.view.ZmSuggestionsView</a></li>
+	
+	<li><a href="../symbols/ZmTimeSuggestionPrefDialog.html">zimbraMail.calendar.view.ZmTimeSuggestionPrefDialog</a></li>
+	
+	<li><a href="../symbols/ZmTimeSuggestionView.html">zimbraMail.calendar.view.ZmTimeSuggestionView</a></li>
+	
+	<li><a href="../symbols/ZmCalendarApp.html">zimbraMail.calendar.ZmCalendarApp</a></li>
+	
+	<li><a href="../symbols/ZmApp.html">zimbraMail.core.ZmApp</a></li>
+	
+	<li><a href="../symbols/ZmAppCtxt.html">zimbraMail.core.ZmAppCtxt</a></li>
+	
+	<li><a href="../symbols/ZmAppViewMgr.html">zimbraMail.core.ZmAppViewMgr</a></li>
+	
+	<li><a href="../symbols/ZmClientCmdHandler.html">zimbraMail.core.ZmClientCmdHandler</a></li>
+	
+	<li><a href="../symbols/ZmId.html">zimbraMail.core.ZmId</a></li>
+	
+	<li><a href="../symbols/ZmMimeTable.html">zimbraMail.core.ZmMimeTable</a></li>
+	
+	<li><a href="../symbols/ZmNewWindow.html">zimbraMail.core.ZmNewWindow</a></li>
+	
+	<li><a href="../symbols/ZmOperation.html">zimbraMail.core.ZmOperation</a></li>
+	
+	<li><a href="../symbols/ZmRequestMgr.html">zimbraMail.core.ZmRequestMgr</a></li>
+	
+	<li><a href="../symbols/ZmToolTipMgr.html">zimbraMail.core.ZmToolTipMgr</a></li>
+	
+	<li><a href="../symbols/ZmZimbraMail.html">zimbraMail.core.ZmZimbraMail</a></li>
+	
+	<li><a href="../symbols/ZmComposeController.html">zimbraMail.mail.controller.ZmComposeController</a></li>
+	
+	<li><a href="../symbols/ZmConvController.html">zimbraMail.mail.controller.ZmConvController</a></li>
+	
+	<li><a href="../symbols/ZmConvListController.html">zimbraMail.mail.controller.ZmConvListController</a></li>
+	
+	<li><a href="../symbols/ZmDoublePaneController.html">zimbraMail.mail.controller.ZmDoublePaneController</a></li>
+	
+	<li><a href="../symbols/ZmMailConfirmController.html">zimbraMail.mail.controller.ZmMailConfirmController</a></li>
+	
+	<li><a href="../symbols/ZmMailListController.html">zimbraMail.mail.controller.ZmMailListController</a></li>
+	
+	<li><a href="../symbols/ZmMsgController.html">zimbraMail.mail.controller.ZmMsgController</a></li>
+	
+	<li><a href="../symbols/ZmConv.html">zimbraMail.mail.model.ZmConv</a></li>
+	
+	<li><a href="../symbols/ZmDataSource.html">zimbraMail.mail.model.ZmDataSource</a></li>
+	
+	<li><a href="../symbols/ZmDataSourceCollection.html">zimbraMail.mail.model.ZmDataSourceCollection</a></li>
+	
+	<li><a href="../symbols/ZmIdentity.html">zimbraMail.mail.model.ZmIdentity</a></li>
+	
+	<li><a href="../symbols/ZmIdentityCollection.html">zimbraMail.mail.model.ZmIdentityCollection</a></li>
+	
+	<li><a href="../symbols/ZmImapAccount.html">zimbraMail.mail.model.ZmImapAccount</a></li>
+	
+	<li><a href="../symbols/ZmMailItem.html">zimbraMail.mail.model.ZmMailItem</a></li>
+	
+	<li><a href="../symbols/ZmMailList.html">zimbraMail.mail.model.ZmMailList</a></li>
+	
+	<li><a href="../symbols/ZmMailMsg.html">zimbraMail.mail.model.ZmMailMsg</a></li>
+	
+	<li><a href="../symbols/ZmMimePart.html">zimbraMail.mail.model.ZmMimePart</a></li>
+	
+	<li><a href="../symbols/ZmPopAccount.html">zimbraMail.mail.model.ZmPopAccount</a></li>
+	
+	<li><a href="../symbols/ZmSignature.html">zimbraMail.mail.model.ZmSignature</a></li>
+	
+	<li><a href="../symbols/ZmSignatureCollection.html">zimbraMail.mail.model.ZmSignatureCollection</a></li>
+	
+	<li><a href="../symbols/ZmGrantRightsDialog.html">zimbraMail.mail.view.prefs.ZmGrantRightsDialog</a></li>
+	
+	<li><a href="../symbols/ZmConvView2.html">zimbraMail.mail.view.ZmConvView2</a></li>
+	
+	<li><a href="../symbols/ZmInviteMsgView.html">zimbraMail.mail.view.ZmInviteMsgView</a></li>
+	
+	<li><a href="../symbols/ZmMailItemView.html">zimbraMail.mail.view.ZmMailItemView</a></li>
+	
+	<li><a href="../symbols/ZmMailRedirectDialog.html">zimbraMail.mail.view.ZmMailRedirectDialog</a></li>
+	
+	<li><a href="../symbols/ZmRecipients.html">zimbraMail.mail.view.ZmRecipients</a></li>
+	
+	<li><a href="../symbols/ZmRetentionWarningDialog.html">zimbraMail.mail.view.ZmRetentionWarningDialog</a></li>
+	
+	<li><a href="../symbols/ZmMailApp.html">zimbraMail.mail.ZmMailApp</a></li>
+	
+	<li><a href="../symbols/ZmPortalController.html">zimbraMail.portal.controller.ZmPortalController</a></li>
+	
+	<li><a href="../symbols/ZmPortlet.html">zimbraMail.portal.model.ZmPortlet</a></li>
+	
+	<li><a href="../symbols/ZmPortletMgr.html">zimbraMail.portal.model.ZmPortletMgr</a></li>
+	
+	<li><a href="../symbols/ZmPortalView.html">zimbraMail.portal.view.ZmPortalView</a></li>
+	
+	<li><a href="../symbols/ZmPortletView.html">zimbraMail.portal.view.ZmPortletView</a></li>
+	
+	<li><a href="../symbols/ZmPortalApp.html">zimbraMail.portal.ZmPortalApp</a></li>
+	
+	<li><a href="../symbols/ZmFilterController.html">zimbraMail.prefs.controller.ZmFilterController</a></li>
+	
+	<li><a href="../symbols/ZmFilterRulesController.html">zimbraMail.prefs.controller.ZmFilterRulesController</a></li>
+	
+	<li><a href="../symbols/ZmMobileDevicesController.html">zimbraMail.prefs.controller.ZmMobileDevicesController</a></li>
+	
+	<li><a href="../symbols/ZmPrefController.html">zimbraMail.prefs.controller.ZmPrefController</a></li>
+	
+	<li><a href="../symbols/ZmPrefPageTreeController.html">zimbraMail.prefs.controller.ZmPrefPageTreeController</a></li>
+	
+	<li><a href="../symbols/ZmFilterRule.html">zimbraMail.prefs.model.ZmFilterRule</a></li>
+	
+	<li><a href="../symbols/ZmFilterRules.html">zimbraMail.prefs.model.ZmFilterRules</a></li>
+	
+	<li><a href="../symbols/ZmLocale.html">zimbraMail.prefs.model.ZmLocale</a></li>
+	
+	<li><a href="../symbols/ZmMobileDevice.html">zimbraMail.prefs.model.ZmMobileDevice</a></li>
+	
+	<li><a href="../symbols/ZmPersona.html">zimbraMail.prefs.model.ZmPersona</a></li>
+	
+	<li><a href="../symbols/ZmPrefPage.html">zimbraMail.prefs.model.ZmPrefPage</a></li>
+	
+	<li><a href="../symbols/ZmApplicationCodeDialog.html">zimbraMail.prefs.view.ZmApplicationCodeDialog</a></li>
+	
+	<li><a href="../symbols/ZmFilterRuleDialog.html">zimbraMail.prefs.view.ZmFilterRuleDialog</a></li>
+	
+	<li><a href="../symbols/ZmFilterRulesView.html">zimbraMail.prefs.view.ZmFilterRulesView</a></li>
+	
+	<li><a href="../symbols/ZmOneTimeCodesDialog.html">zimbraMail.prefs.view.ZmOneTimeCodesDialog</a></li>
+	
+	<li><a href="../symbols/ZmPreferencesPage.html">zimbraMail.prefs.view.ZmPreferencesPage</a></li>
+	
+	<li><a href="../symbols/ZmPrefView.html">zimbraMail.prefs.view.ZmPrefView</a></li>
+	
+	<li><a href="../symbols/ZmPreferencesApp.html">zimbraMail.prefs.ZmPreferencesApp</a></li>
+	
+	<li><a href="../symbols/ZmActionController.html">zimbraMail.share.controller.ZmActionController</a></li>
+	
+	<li><a href="../symbols/ZmController.html">zimbraMail.share.controller.ZmController</a></li>
+	
+	<li><a href="../symbols/ZmFolderTreeController.html">zimbraMail.share.controller.ZmFolderTreeController</a></li>
+	
+	<li><a href="../symbols/ZmImportExportController.html">zimbraMail.share.controller.ZmImportExportController</a></li>
+	
+	<li><a href="../symbols/ZmOverviewController.html">zimbraMail.share.controller.ZmOverviewController</a></li>
+	
+	<li><a href="../symbols/ZmSearchController.html">zimbraMail.share.controller.ZmSearchController</a></li>
+	
+	<li><a href="../symbols/ZmSearchResultsController.html">zimbraMail.share.controller.ZmSearchResultsController</a></li>
+	
+	<li><a href="../symbols/ZmSearchTreeController.html">zimbraMail.share.controller.ZmSearchTreeController</a></li>
+	
+	<li><a href="../symbols/ZmTagTreeController.html">zimbraMail.share.controller.ZmTagTreeController</a></li>
+	
+	<li><a href="../symbols/ZmTreeController.html">zimbraMail.share.controller.ZmTreeController</a></li>
+	
+	<li><a href="../symbols/ZmZimletAppController.html">zimbraMail.share.controller.ZmZimletAppController</a></li>
+	
+	<li><a href="../symbols/ZmZimletTreeController.html">zimbraMail.share.controller.ZmZimletTreeController</a></li>
+	
+	<li><a href="../symbols/ZmAppEvent.html">zimbraMail.share.model.events.ZmAppEvent</a></li>
+	
+	<li><a href="../symbols/ZmEvent.html">zimbraMail.share.model.events.ZmEvent</a></li>
+	
+	<li><a href="../symbols/ZmAccessControlEntry.html">zimbraMail.share.model.ZmAccessControlEntry</a></li>
+	
+	<li><a href="../symbols/ZmAccessControlList.html">zimbraMail.share.model.ZmAccessControlList</a></li>
+	
+	<li><a href="../symbols/ZmAccount.html">zimbraMail.share.model.ZmAccount</a></li>
+	
+	<li><a href="../symbols/ZmAccountList.html">zimbraMail.share.model.ZmAccountList</a></li>
+	
+	<li><a href="../symbols/ZmCompositeAction.html">zimbraMail.share.model.ZmCompositeAction</a></li>
+	
+	<li><a href="../symbols/ZmOrganizerMoveAction.html">zimbraMail.share.model.ZmOrganizerMoveAction</a></li>
+	
+	<li><a href="../symbols/ZmItemMoveAction.html">zimbraMail.share.model.ZmItemMoveAction</a></li>
+	
+	<li><a href="../symbols/ZmOrganizerAction.html">zimbraMail.share.model.ZmOrganizerAction</a></li>
+	
+	<li><a href="../symbols/ZmItemAction.html">zimbraMail.share.model.ZmItemAction</a></li>
+	
+	<li><a href="../symbols/ZmAction.html">zimbraMail.share.model.ZmAction</a></li>
+	
+	<li><a href="../symbols/ZmActionStack.html">zimbraMail.share.model.ZmActionStack</a></li>
+	
+	<li><a href="../symbols/ZmAttachmentTypeList.html">zimbraMail.share.model.ZmAttachmentTypeList</a></li>
+	
+	<li><a href="../symbols/ZmAuthenticate.html">zimbraMail.share.model.ZmAuthenticate</a></li>
+	
+	<li><a href="../symbols/ZmPeopleSearchAutocomplete.html">zimbraMail.share.model.ZmPeopleSearchAutocomplete</a></li>
+	
+	<li><a href="../symbols/ZmSearchAutocomplete.html">zimbraMail.share.model.ZmSearchAutocomplete</a></li>
+	
+	<li><a href="../symbols/ZmAutocompleteMatch.html">zimbraMail.share.model.ZmAutocompleteMatch</a></li>
+	
+	<li><a href="../symbols/ZmAutocomplete.html">zimbraMail.share.model.ZmAutocomplete</a></li>
+	
+	<li><a href="../symbols/ZmDomain.html">zimbraMail.share.model.ZmDomain</a></li>
+	
+	<li><a href="../symbols/ZmDomain.html">zimbraMail.share.model.ZmDomain</a></li>
+	
+	<li><a href="../symbols/ZmDomainList.html">zimbraMail.share.model.ZmDomainList</a></li>
+	
+	<li><a href="../symbols/ZmFolder.html">zimbraMail.share.model.ZmFolder</a></li>
+	
+	<li><a href="../symbols/ZmFolderTree.html">zimbraMail.share.model.ZmFolderTree</a></li>
+	
+	<li><a href="../symbols/ZmInvite.html">zimbraMail.share.model.ZmInvite</a></li>
+	
+	<li><a href="../symbols/ZmItem.html">zimbraMail.share.model.ZmItem</a></li>
+	
+	<li><a href="../symbols/ZmKeyMap.html">zimbraMail.share.model.ZmKeyMap</a></li>
+	
+	<li><a href="../symbols/ZmList.html">zimbraMail.share.model.ZmList</a></li>
+	
+	<li><a href="../symbols/ZmMetaData.html">zimbraMail.share.model.ZmMetaData</a></li>
+	
+	<li><a href="../symbols/ZmModel.html">zimbraMail.share.model.ZmModel</a></li>
+	
+	<li><a href="../symbols/ZmMountpoint.html">zimbraMail.share.model.ZmMountpoint</a></li>
+	
+	<li><a href="../symbols/ZmObjectHandler.html">zimbraMail.share.model.ZmObjectHandler</a></li>
+	
+	<li><a href="../symbols/ZmObjectManager.html">zimbraMail.share.model.ZmObjectManager</a></li>
+	
+	<li><a href="../symbols/ZmOrganizer.html">zimbraMail.share.model.ZmOrganizer</a></li>
+	
+	<li><a href="../symbols/ZmSearch.html">zimbraMail.share.model.ZmSearch</a></li>
+	
+	<li><a href="../symbols/ZmSearchFolder.html">zimbraMail.share.model.ZmSearchFolder</a></li>
+	
+	<li><a href="../symbols/ZmSearchResult.html">zimbraMail.share.model.ZmSearchResult</a></li>
+	
+	<li><a href="../symbols/ZmSetting.html">zimbraMail.share.model.ZmSetting</a></li>
+	
+	<li><a href="../symbols/ZmSettings.html">zimbraMail.share.model.ZmSettings</a></li>
+	
+	<li><a href="../symbols/ZmShare.html">zimbraMail.share.model.ZmShare</a></li>
+	
+	<li><a href="../symbols/ZmTag.html">zimbraMail.share.model.ZmTag</a></li>
+	
+	<li><a href="../symbols/ZmTagTree.html">zimbraMail.share.model.ZmTagTree</a></li>
+	
+	<li><a href="../symbols/ZmTimezone.html">zimbraMail.share.model.ZmTimezone</a></li>
+	
+	<li><a href="../symbols/ZmTree.html">zimbraMail.share.model.ZmTree</a></li>
+	
+	<li><a href="../symbols/ZmZimbraAccount.html">zimbraMail.share.model.ZmZimbraAccount</a></li>
+	
+	<li><a href="../symbols/ZmZimlet.html">zimbraMail.share.model.ZmZimlet</a></li>
+	
+	<li><a href="../symbols/ZmZimletBase.html">zimbraMail.share.model.ZmZimletBase</a></li>
+	
+	<li><a href="../symbols/ZmZimletContext.html">zimbraMail.share.model.ZmZimletContext</a></li>
+	
+	<li><a href="../symbols/ZmZimletMgr.html">zimbraMail.share.model.ZmZimletMgr</a></li>
+	
+	<li><a href="../symbols/ZmAcceptShareDialog.html">zimbraMail.share.view.dialog.ZmAcceptShareDialog</a></li>
+	
+	<li><a href="../symbols/ZmAttachDialog.html">zimbraMail.share.view.dialog.ZmAttachDialog</a></li>
+	
+	<li><a href="../symbols/ZmChooseAccountDialog.html">zimbraMail.share.view.dialog.ZmChooseAccountDialog</a></li>
+	
+	<li><a href="../symbols/ZmChooseFolderDialog.html">zimbraMail.share.view.dialog.ZmChooseFolderDialog</a></li>
+	
+	<li><a href="../symbols/ZmDebugLogDialog.html">zimbraMail.share.view.dialog.ZmDebugLogDialog</a></li>
+	
+	<li><a href="../symbols/ZmDeclineShareDialog.html">zimbraMail.share.view.dialog.ZmDeclineShareDialog</a></li>
+	
+	<li><a href="../symbols/ZmDialog.html">zimbraMail.share.view.dialog.ZmDialog</a></li>
+	
+	<li><a href="../symbols/ZmDumpsterDialog.html">zimbraMail.share.view.dialog.ZmDumpsterDialog</a></li>
+	
+	<li><a href="../symbols/ZmFindnReplaceDialog.html">zimbraMail.share.view.dialog.ZmFindnReplaceDialog</a></li>
+	
+	<li><a href="../symbols/ZmFolderDialogTabView.html">zimbraMail.share.view.dialog.ZmFolderDialogTabView</a></li>
+	
+	<li><a href="../symbols/ZmFolderNotifyDialog.html">zimbraMail.share.view.dialog.ZmFolderNotifyDialog</a></li>
+	
+	<li><a href="../symbols/ZmFolderPropertyView.html">zimbraMail.share.view.dialog.ZmFolderPropertyView</a></li>
+	
+	<li><a href="../symbols/ZmFolderPropsDialog.html">zimbraMail.share.view.dialog.ZmFolderPropsDialog</a></li>
+	
+	<li><a href="../symbols/ZmNewOrganizerDialog.html">zimbraMail.share.view.dialog.ZmNewOrganizerDialog</a></li>
+	
+	<li><a href="../symbols/ZmNewSearchDialog.html">zimbraMail.share.view.dialog.ZmNewSearchDialog</a></li>
+	
+	<li><a href="../symbols/ZmNewTagDialog.html">zimbraMail.share.view.dialog.ZmNewTagDialog</a></li>
+	
+	<li><a href="../symbols/ZmOfflineSettingsDialog.html">zimbraMail.share.view.dialog.ZmOfflineSettingsDialog</a></li>
+	
+	<li><a href="../symbols/ZmPasswordUpdateDialog.html">zimbraMail.share.view.dialog.ZmPasswordUpdateDialog</a></li>
+	
+	<li><a href="../symbols/ZmPickTagDialog.html">zimbraMail.share.view.dialog.ZmPickTagDialog</a></li>
+	
+	<li><a href="../symbols/ZmPromptDialog.html">zimbraMail.share.view.dialog.ZmPromptDialog</a></li>
+	
+	<li><a href="../symbols/ZmQuickAddDialog.html">zimbraMail.share.view.dialog.ZmQuickAddDialog</a></li>
+	
+	<li><a href="../symbols/ZmRenameFolderDialog.html">zimbraMail.share.view.dialog.ZmRenameFolderDialog</a></li>
+	
+	<li><a href="../symbols/ZmRenameTagDialog.html">zimbraMail.share.view.dialog.ZmRenameTagDialog</a></li>
+	
+	<li><a href="../symbols/ZmRevokeShareDialog.html">zimbraMail.share.view.dialog.ZmRevokeShareDialog</a></li>
+	
+	<li><a href="../symbols/ZmSharePropsDialog.html">zimbraMail.share.view.dialog.ZmSharePropsDialog</a></li>
+	
+	<li><a href="../symbols/ZmTimeDialog.html">zimbraMail.share.view.dialog.ZmTimeDialog</a></li>
+	
+	<li><a href="../symbols/ZmTimezonePicker.html">zimbraMail.share.view.dialog.ZmTimezonePicker</a></li>
+	
+	<li><a href="../symbols/ZmTwoFactorSetupDialog.html">zimbraMail.share.view.dialog.ZmTwoFactorSetupDialog</a></li>
+	
+	<li><a href="../symbols/ZmUploadDialog.html">zimbraMail.share.view.dialog.ZmUploadDialog</a></li>
+	
+	<li><a href="../symbols/ZmLiteHtmlEditor.html">zimbraMail.share.view.htmlEditor.ZmLiteHtmlEditor</a></li>
+	
+	<li><a href="../symbols/ZmSpellChecker.html">zimbraMail.share.view.htmlEditor.ZmSpellChecker</a></li>
+	
+	<li><a href="../symbols/ZmAccountAlert.html">zimbraMail.share.view.ZmAccountAlert</a></li>
+	
+	<li><a href="../symbols/ZmAccountOverviewContainer.html">zimbraMail.share.view.ZmAccountOverviewContainer</a></li>
+	
+	<li><a href="../symbols/ZmActionMenu.html">zimbraMail.share.view.ZmActionMenu</a></li>
+	
+	<li><a href="../symbols/ZmAddressBubbleList.html">zimbraMail.share.view.ZmAddressBubbleList</a></li>
+	
+	<li><a href="../symbols/ZmAddressBubble.html">zimbraMail.share.view.ZmAddressBubble</a></li>
+	
+	<li><a href="../symbols/ZmAddressInputField.html">zimbraMail.share.view.ZmAddressInputField</a></li>
+	
+	<li><a href="../symbols/ZmAlert.html">zimbraMail.share.view.ZmAlert</a></li>
+	
+	<li><a href="../symbols/ZmAppButton.html">zimbraMail.share.view.ZmAppButton</a></li>
+	
+	<li><a href="../symbols/ZmAppChooser.html">zimbraMail.share.view.ZmAppChooser</a></li>
+	
+	<li><a href="../symbols/ZmAppIframeView.html">zimbraMail.share.view.ZmAppIframeView</a></li>
+	
+	<li><a href="../symbols/ZmAutocompleteListView.html">zimbraMail.share.view.ZmAutocompleteListView</a></li>
+	
+	<li><a href="../symbols/ZmBrowserAlert.html">zimbraMail.share.view.ZmBrowserAlert</a></li>
+	
+	<li><a href="../symbols/ZmButtonToolBar.html">zimbraMail.share.view.ZmButtonToolBar</a></li>
+	
+	<li><a href="../symbols/ZmCommunityView.html">zimbraMail.share.view.ZmCommunityView</a></li>
+	
+	<li><a href="../symbols/ZmDLAutocompleteListView.html">zimbraMail.share.view.ZmDLAutocompleteListView</a></li>
+	
+	<li><a href="../symbols/ZmFolderChooser.html">zimbraMail.share.view.ZmFolderChooser</a></li>
+	
+	<li><a href="../symbols/ZmListView.html">zimbraMail.share.view.ZmListView</a></li>
+	
+	<li><a href="../symbols/ZmNavToolBar.html">zimbraMail.share.view.ZmNavToolBar</a></li>
+	
+	<li><a href="../symbols/ZmOverview.html">zimbraMail.share.view.ZmOverview</a></li>
+	
+	<li><a href="../symbols/ZmOverviewContainer.html">zimbraMail.share.view.ZmOverviewContainer</a></li>
+	
+	<li><a href="../symbols/ZmPopupMenu.html">zimbraMail.share.view.ZmPopupMenu</a></li>
+	
+	<li><a href="../symbols/ZmSearchResultsFilterPanel.html">zimbraMail.share.view.ZmSearchResultsFilterPanel</a></li>
+	
+	<li><a href="../symbols/ZmSearchResultsToolBar.html">zimbraMail.share.view.ZmSearchResultsToolBar</a></li>
+	
+	<li><a href="../symbols/ZmSearchToolBar.html">zimbraMail.share.view.ZmSearchToolBar</a></li>
+	
+	<li><a href="../symbols/ZmShareReply.html">zimbraMail.share.view.ZmShareReply</a></li>
+	
+	<li><a href="../symbols/ZmToast.html">zimbraMail.share.view.ZmToast</a></li>
+	
+	<li><a href="../symbols/ZmStatusView.html">zimbraMail.share.view.ZmStatusView</a></li>
+	
+	<li><a href="../symbols/ZmTagMenu.html">zimbraMail.share.view.ZmTagMenu</a></li>
+	
+	<li><a href="../symbols/ZmToolBar.html">zimbraMail.share.view.ZmToolBar</a></li>
+	
+	<li><a href="../symbols/ZmTreeView.html">zimbraMail.share.view.ZmTreeView</a></li>
+	
+	<li><a href="../symbols/ZmZimletApp.html">zimbraMail.share.view.ZmZimletApp</a></li>
+	
+	<li><a href="../symbols/ZmEmailObjectHandler.html">zimbraMail.share.zimlet.handler.ZmEmailObjectHandler</a></li>
+	
+	<li><a href="../symbols/ZmSearchApp.html">zimbraMail.share.ZmSearchApp</a></li>
+	
+	<li><a href="../symbols/ZmSocialApp.html">zimbraMail.share.ZmSocialApp</a></li>
+	
+	<li><a href="../symbols/ZmUploadManager.html">zimbraMail.share.ZmUploadManager</a></li>
+	
+	<li><a href="../symbols/ZmTaskController.html">zimbraMail.tasks.controller.ZmTaskController</a></li>
+	
+	<li><a href="../symbols/ZmTaskListController.html">zimbraMail.tasks.controller.ZmTaskListController</a></li>
+	
+	<li><a href="../symbols/ZmTaskTreeController.html">zimbraMail.tasks.controller.ZmTaskTreeController</a></li>
+	
+	<li><a href="../symbols/ZmTask.html">zimbraMail.tasks.model.ZmTask</a></li>
+	
+	<li><a href="../symbols/ZmTaskFolder.html">zimbraMail.tasks.model.ZmTaskFolder</a></li>
+	
+	<li><a href="../symbols/ZmNewTaskFolderDialog.html">zimbraMail.tasks.view.ZmNewTaskFolderDialog</a></li>
+	
+	<li><a href="../symbols/ZmTaskEditView.html">zimbraMail.tasks.view.ZmTaskEditView</a></li>
+	
+	<li><a href="../symbols/ZmTaskListView.html">zimbraMail.tasks.view.ZmTaskListView</a></li>
+	
+	<li><a href="../symbols/ZmTaskView.html">zimbraMail.tasks.view.ZmTaskView</a></li>
+	
+	<li><a href="../symbols/ZmTasksApp.html">zimbraMail.tasks.ZmTasksApp</a></li>
+	
+</ul>
+<hr />
+			<!-- end publish.classesIndex -->
+		</div>
+			</td>	
+			<td valign="top">
+		<div id="content">
+<!-- ============================== class title ============================ -->
+			<h1 class="classTitle">
+				
+				Class Dwt
+			</h1>
+
+<!-- ============================== class summary ========================== -->			
+			<p class="description">
+				
+				<br>
+				Dwt is a static class that defines a number of constants and helper methods that
+support the <code>ajax.dwt.*</code> package.
+				<br>
+				
+					<br /><i>Defined in: </i> <a href="../symbols/src/WebRoot_js_ajax_dwt_core_Dwt.js.html">Dwt.js</a>.<br />
+				
+			</p>
+
+<!-- ============================== constructor summary ==================== -->			
+			
+			<table class="summaryTable" cellspacing="0" summary="A summary of the constructor documented in the class Dwt.">
+				<caption>Class Summary</caption>
+				<thead>
+					<tr>
+						<th scope="col">Constructor Attributes</th>
+						<th scope="col">Constructor Name and Description</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td class="attributes">&nbsp;</td>
+						<td class="nameDescription" >
+							<div class="fixedFont">
+								<b><a href="../symbols/Dwt.html#constructor">Dwt</a></b>()
+							</div>
+							<div class="description">Default constructor.</div>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			
+
+<!-- ============================== properties summary ===================== -->
+			
+				
+				
+				<table class="summaryTable" cellspacing="0" summary="A summary of the fields documented in the class Dwt.">
+					<caption>Field Summary</caption>
+					<thead>
+						<tr>
+							<th scope="col">Field Attributes</th>
+							<th scope="col">Field Name and Description</th>
+						</tr>
+					</thead>
+					<tbody>
+					
+						<tr>
+							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont">
+								Dwt.<b><a href="../symbols/Dwt.html#.ABSOLUTE_STYLE">ABSOLUTE_STYLE</a></b>
+								</div>
+								<div class="description">Absolute position style.</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont">
+								Dwt.<b><a href="../symbols/Dwt.html#.CLEAR">CLEAR</a></b>
+								</div>
+								<div class="description">Used to clear a value.</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont">
+								Dwt.<b><a href="../symbols/Dwt.html#.CLIP">CLIP</a></b>
+								</div>
+								<div class="description">Clip on overflow.</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont">
+								Dwt.<b><a href="../symbols/Dwt.html#.DEFAULT">DEFAULT</a></b>
+								</div>
+								<div class="description">Default value.</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont">
+								Dwt.<b><a href="../symbols/Dwt.html#.DISPLAY_BLOCK">DISPLAY_BLOCK</a></b>
+								</div>
+								<div class="description">Block display style.</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont">
+								Dwt.<b><a href="../symbols/Dwt.html#.DISPLAY_INLINE">DISPLAY_INLINE</a></b>
+								</div>
+								<div class="description">Inline display style.</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont">
+								Dwt.<b><a href="../symbols/Dwt.html#.DISPLAY_NONE">DISPLAY_NONE</a></b>
+								</div>
+								<div class="description">No display style.</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont">
+								Dwt.<b><a href="../symbols/Dwt.html#.DISPLAY_TABLE_CELL">DISPLAY_TABLE_CELL</a></b>
+								</div>
+								<div class="description">Table cell style.</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont">
+								Dwt.<b><a href="../symbols/Dwt.html#.DISPLAY_TABLE_ROW">DISPLAY_TABLE_ROW</a></b>
+								</div>
+								<div class="description">Table row style.</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont">
+								Dwt.<b><a href="../symbols/Dwt.html#.DND_DROP_COPY">DND_DROP_COPY</a></b>
+								</div>
+								<div class="description">Copy drag and drop operation.</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont">
+								Dwt.<b><a href="../symbols/Dwt.html#.DND_DROP_MOVE">DND_DROP_MOVE</a></b>
+								</div>
+								<div class="description">Move drag and drop operation.</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont">
+								Dwt.<b><a href="../symbols/Dwt.html#.DND_DROP_NONE">DND_DROP_NONE</a></b>
+								</div>
+								<div class="description">No drag and drop operation.</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont">
+								Dwt.<b><a href="../symbols/Dwt.html#.FIXED_SCROLL">FIXED_SCROLL</a></b>
+								</div>
+								<div class="description">Always have scrollbars whether content overflows or not.</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont">
+								Dwt.<b><a href="../symbols/Dwt.html#.FIXED_STYLE">FIXED_STYLE</a></b>
+								</div>
+								<div class="description">Fixed position style.</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont">
+								Dwt.<b><a href="../symbols/Dwt.html#.LOC_NOWHERE">LOC_NOWHERE</a></b>
+								</div>
+								<div class="description">Offscreen position.</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont">
+								Dwt.<b><a href="../symbols/Dwt.html#.NO_REPEAT">NO_REPEAT</a></b>
+								</div>
+								<div class="description">Do not repeat background image.</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont">
+								Dwt.<b><a href="../symbols/Dwt.html#.RELATIVE_STYLE">RELATIVE_STYLE</a></b>
+								</div>
+								<div class="description">Relative position style.</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont">
+								Dwt.<b><a href="../symbols/Dwt.html#.REPEAT">REPEAT</a></b>
+								</div>
+								<div class="description">Repeat background image.</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont">
+								Dwt.<b><a href="../symbols/Dwt.html#.REPEAT_X">REPEAT_X</a></b>
+								</div>
+								<div class="description">Repeat background image horizontally.</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont">
+								Dwt.<b><a href="../symbols/Dwt.html#.REPEAT_Y">REPEAT_Y</a></b>
+								</div>
+								<div class="description">Repeat background image vertically.</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont">
+								Dwt.<b><a href="../symbols/Dwt.html#.SCROLL">SCROLL</a></b>
+								</div>
+								<div class="description">Automatically create scrollbars if content overflows.</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont">
+								Dwt.<b><a href="../symbols/Dwt.html#.SCROLL_X">SCROLL_X</a></b>
+								</div>
+								<div class="description">Only show scrollbars on X when content overflows.</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont">
+								Dwt.<b><a href="../symbols/Dwt.html#.SCROLL_Y">SCROLL_Y</a></b>
+								</div>
+								<div class="description">Only show scrollbars on Y when content overflows.</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont">
+								Dwt.<b><a href="../symbols/Dwt.html#.SCROLLBAR_WIDTH">SCROLLBAR_WIDTH</a></b>
+								</div>
+								<div class="description">Ballpark figure for width of a scrollbar.</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont">
+								Dwt.<b><a href="../symbols/Dwt.html#.STATIC_STYLE">STATIC_STYLE</a></b>
+								</div>
+								<div class="description">Static position style.</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont">
+								Dwt.<b><a href="../symbols/Dwt.html#.VISIBLE">VISIBLE</a></b>
+								</div>
+								<div class="description">Allow overflow to be visible.</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont">
+								Dwt.<b><a href="../symbols/Dwt.html#.Z_BUSY">Z_BUSY</a></b>
+								</div>
+								<div class="description">This layer appears in front of other layers to block all user mouse input.</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont">
+								Dwt.<b><a href="../symbols/Dwt.html#.Z_CURTAIN">Z_CURTAIN</a></b>
+								</div>
+								<div class="description">The curtain layer.</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont">
+								Dwt.<b><a href="../symbols/Dwt.html#.Z_DIALOG">Z_DIALOG</a></b>
+								</div>
+								<div class="description">Dialog layer.</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont">
+								Dwt.<b><a href="../symbols/Dwt.html#.Z_DIALOG_MENU">Z_DIALOG_MENU</a></b>
+								</div>
+								<div class="description">Used by menus that are part of a dialog.</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont">
+								Dwt.<b><a href="../symbols/Dwt.html#.Z_DND">Z_DND</a></b>
+								</div>
+								<div class="description">Drag and Drop (DnD) icon layer.</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont">
+								Dwt.<b><a href="../symbols/Dwt.html#.Z_HIDDEN">Z_HIDDEN</a></b>
+								</div>
+								<div class="description">Hidden layer.</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont">
+								Dwt.<b><a href="../symbols/Dwt.html#.Z_MENU">Z_MENU</a></b>
+								</div>
+								<div class="description">Popup menu layer.</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont">
+								Dwt.<b><a href="../symbols/Dwt.html#.Z_SPLASH">Z_SPLASH</a></b>
+								</div>
+								<div class="description">Used by the splash screens.</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont">
+								Dwt.<b><a href="../symbols/Dwt.html#.Z_TOAST">Z_TOAST</a></b>
+								</div>
+								<div class="description">The toast layer.</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont">
+								Dwt.<b><a href="../symbols/Dwt.html#.Z_TOOLTIP">Z_TOOLTIP</a></b>
+								</div>
+								<div class="description">Tooltips layer.</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont">
+								Dwt.<b><a href="../symbols/Dwt.html#.Z_VEIL">Z_VEIL</a></b>
+								</div>
+								<div class="description">Veil layer.</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont">
+								Dwt.<b><a href="../symbols/Dwt.html#.Z_VIEW">Z_VIEW</a></b>
+								</div>
+								<div class="description">Visible layer.</div>
+							</td>
+						</tr>
+					
+					</tbody>
+				</table>
+				
+				
+				
+			
+
+<!-- ============================== methods summary ======================== -->
+			
+				
+				
+				<table class="summaryTable" cellspacing="0" summary="A summary of the methods documented in the class Dwt.">
+					<caption>Method Summary</caption>
+					<thead>
+						<tr>
+							<th scope="col">Method Attributes</th>
+							<th scope="col">Method Name and Description</th>
+						</tr>
+					</thead>
+					<tbody>
+					
+						<tr>
+							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont">Dwt.<b><a href="../symbols/Dwt.html#.addClass">addClass</a></b>(el, c)
+								</div>
+								<div class="description">Adds the given class name to the element's CSS class names</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont">Dwt.<b><a href="../symbols/Dwt.html#.byClassName">byClassName</a></b>(className, ancestor)
+								</div>
+								<div class="description">Get all elements of the given class name.</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont">Dwt.<b><a href="../symbols/Dwt.html#.byTag">byTag</a></b>(tagName, ancestor)
+								</div>
+								<div class="description">Get all elements of a certain tag name.</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont">Dwt.<b><a href="../symbols/Dwt.html#.condClass">condClass</a></b>(el, condition, a, b)
+								</div>
+								<div class="description">Conditionally add or remove a class name from an element</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont">Dwt.<b><a href="../symbols/Dwt.html#.createLinearGradientInfo">createLinearGradientInfo</a></b>(startColor, endColor, direction)
+								</div>
+								<div class="description">-- FF 3.6+
+   background: -moz-linear-gradient(black, white);
+-- Safari 4+, Chrome 2+
+   background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #000000), color-stop(100%, #ffffff));
+-- Safari 5.1+, Chrome 10+
+   background: -webkit-linear-gradient(top, black, white);
+-- Opera 11.10
+   background: -o-linear-gradient(black, white);
+-- IE6 & IE7
+   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#000000', endColorstr='#ffffff');
+-- IE8 & IE9
+   -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#000000', endColorstr='#ffffff')";
+-- IE10
+   background: -ms-linear-gradient(black, white);
+-- the standard
+   background: linear-gradient(black, white);</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont">Dwt.<b><a href="../symbols/Dwt.html#.delClass">delClass</a></b>(el, del, add)
+								</div>
+								<div class="description">Remove the <code>del</code> class name from the element's CSS class names and
+optionally add <code>add</code> class name if given provided</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont">Dwt.<b><a href="../symbols/Dwt.html#.doOverlap">doOverlap</a></b>(el1, el2)
+								</div>
+								<div class="description">Returns true if the two elements overlap.</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont">Dwt.<b><a href="../symbols/Dwt.html#.findAncestor">findAncestor</a></b>(domElement, attrName)
+								</div>
+								<div class="description">Finds an ancestor element with a non-empty value for the given attr.</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont">Dwt.<b><a href="../symbols/Dwt.html#.getAncestors">getAncestors</a></b>(childNode, parentNode, includeChild)
+								</div>
+								<div class="description">Get ancestor elements of the given node, up to and including the given
+parent node.</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont">Dwt.<b><a href="../symbols/Dwt.html#.getBounds">getBounds</a></b>(htmlElement, rect)
+								</div>
+								<div class="description">Gets the bounds of an HTML element.</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont">Dwt.<b><a href="../symbols/Dwt.html#.getCursor">getCursor</a></b>(htmlElement)
+								</div>
+								<div class="description">Gets the element cursor for a given HTML element.</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont">Dwt.<b><a href="../symbols/Dwt.html#.getHtmlExtent">getHtmlExtent</a></b>(html)
+								</div>
+								<div class="description">Measure the extent in pixels of a section of html.</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont">Dwt.<b><a href="../symbols/Dwt.html#.getId">getId</a></b>(element, prefix)
+								</div>
+								<div class="description">This method is used to query an element for its id, generating one if it
+isn't set.</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont">Dwt.<b><a href="../symbols/Dwt.html#.getInsetBounds">getInsetBounds</a></b>(htmlElement)
+								</div>
+								<div class="description">Gets the bounds of an HTML element, excluding borders and paddings.</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont">Dwt.<b><a href="../symbols/Dwt.html#.getLocation">getLocation</a></b>(htmlElement, point)
+								</div>
+								<div class="description">Gets the location of an HTML element.</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont">Dwt.<b><a href="../symbols/Dwt.html#.getNextId">getNextId</a></b>(prefix)
+								</div>
+								<div class="description">This method is used to generate a unique id to be used for an HTML element's id
+attribute.</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont">Dwt.<b><a href="../symbols/Dwt.html#.getOuterSize">getOuterSize</a></b>(htmlElement, point)
+								</div>
+								<div class="description">Gets the outer size -- that is, the size including margins, padding, and borders -- of an
+HTML element.</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont">Dwt.<b><a href="../symbols/Dwt.html#.getParams">getParams</a></b>(args, paramNames)
+								</div>
+								<div class="description">Normalizes an argument list into a hash with the given argument names.</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont">Dwt.<b><a href="../symbols/Dwt.html#.getScrollStyle">getScrollStyle</a></b>(htmlElement)
+								</div>
+								<div class="description">Returns <code>htmlElement</code>'s scroll style.</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont">Dwt.<b><a href="../symbols/Dwt.html#.getSelectionEnd">getSelectionEnd</a></b>(input)
+								</div>
+								<div class="description">Retrieves the end of the selection.</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont">Dwt.<b><a href="../symbols/Dwt.html#.getSelectionStart">getSelectionStart</a></b>(input)
+								</div>
+								<div class="description">Retrieves the start of the selection.</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont">Dwt.<b><a href="../symbols/Dwt.html#.getSize">getSize</a></b>(htmlElement, point, getFromStyle)
+								</div>
+								<div class="description">Gets the size of an HTML element.</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont">Dwt.<b><a href="../symbols/Dwt.html#.getWindowSize">getWindowSize</a></b>(point)
+								</div>
+								<div class="description">Gets the window size of the browser.</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont">Dwt.<b><a href="../symbols/Dwt.html#.getZIndex">getZIndex</a></b>(getFromStyle, getFromStyle)
+								</div>
+								<div class="description">Get the z-index of an element.</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont">Dwt.<b><a href="../symbols/Dwt.html#.hasClass">hasClass</a></b>(el, className)
+								</div>
+								<div class="description">Returns true if the specified element has the given class.</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont">Dwt.<b><a href="../symbols/Dwt.html#.insertText">insertText</a></b>(input, text)
+								</div>
+								<div class="description">Inserts some text into an input at the caret.</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont">Dwt.<b><a href="../symbols/Dwt.html#.isAncestor">isAncestor</a></b>(el1, el2)
+								</div>
+								<div class="description">Returns true if el1 is an ancestor (in the parent chain) of el2, or if
+el1 and el2 are the same element.</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont">Dwt.<b><a href="../symbols/Dwt.html#.moveCursorToEnd">moveCursorToEnd</a></b>(input)
+								</div>
+								<div class="description">Move cursor to the end of an input.</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont">Dwt.<b><a href="../symbols/Dwt.html#.parseHtmlFragment">parseHtmlFragment</a></b>(html, isRow)
+								</div>
+								<div class="description">Creates and returns an element from a string of HTML.</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont">Dwt.<b><a href="../symbols/Dwt.html#.printPerfMetric">printPerfMetric</a></b>()
+								</div>
+								<div class="description">Prints the computed time from performance metrics data</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont">Dwt.<b><a href="../symbols/Dwt.html#.setBounds">setBounds</a></b>(htmlElement, x, y, width, height)
+								</div>
+								<div class="description">Sets the bounds of an HTML element.</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont">Dwt.<b><a href="../symbols/Dwt.html#.setCursor">setCursor</a></b>(htmlElement, cursorName)
+								</div>
+								<div class="description">Sets an HTML element cursor.</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont">Dwt.<b><a href="../symbols/Dwt.html#.setLoadedTime">setLoadedTime</a></b>(id, date)
+								</div>
+								<div class="description">Sets up a hidden div for performance metrics.</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont">Dwt.<b><a href="../symbols/Dwt.html#.setLoadingTime">setLoadingTime</a></b>(id, date)
+								</div>
+								<div class="description">Sets up a hidden div for performance metrics.</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont">Dwt.<b><a href="../symbols/Dwt.html#.setLocation">setLocation</a></b>(htmlElement, x, y)
+								</div>
+								<div class="description">Sets the location of an HTML element.</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont">Dwt.<b><a href="../symbols/Dwt.html#.setScrollStyle">setScrollStyle</a></b>(htmlElement, scrollStyle)
+								</div>
+								<div class="description">Sets the <code>htmlElement</code>'s scroll style.</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont">Dwt.<b><a href="../symbols/Dwt.html#.setSelectionRange">setSelectionRange</a></b>(input, start, end)
+								</div>
+								<div class="description">Sets the selection range.</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&lt;static&gt; &nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont">Dwt.<b><a href="../symbols/Dwt.html#.setSelectionText">setSelectionText</a></b>(input, text)
+								</div>
+								<div class="description">Sets the selection text</div>
+							</td>
+						</tr>
+					
+					</tbody>
+				</table>
+				
+				
+				
+			
+<!-- ============================== events summary ======================== -->
+			
+
+<!-- ============================== constructor details ==================== -->		
+			
+			<div class="details"><a name="constructor"> </a>
+				<div class="sectionTitle">
+					Class Detail
+				</div>
+				
+				<div class="fixedFont">
+						<b>Dwt</b>()
+				</div>
+				
+				<div class="description">
+					Default constructor.
+					<br /><i>Author: </i>Ross Dargahi, Conrad Damon.
+				</div>
+				
+				
+				
+				
+					
+					
+					
+					
+					
+					
+					
+
+			</div>
+			
+
+<!-- ============================== field details ========================== -->		
+			
+				<div class="sectionTitle">
+					Field Detail
+				</div>
+				
+					<a name=".ABSOLUTE_STYLE"> </a>
+					<div class="fixedFont">&lt;static&gt; 
+					
+					
+					<span class="light">Dwt.</span><b>ABSOLUTE_STYLE</b>
+					
+					</div>
+					<div class="description">
+						Absolute position style.
+						
+						
+					</div>
+					
+					
+
+						
+						
+						
+						
+
+					<hr />
+				
+					<a name=".CLEAR"> </a>
+					<div class="fixedFont">&lt;static&gt; 
+					
+					
+					<span class="light">Dwt.</span><b>CLEAR</b>
+					
+					</div>
+					<div class="description">
+						Used to clear a value.
+						
+						
+					</div>
+					
+					
+
+						
+						
+						
+						
+
+					<hr />
+				
+					<a name=".CLIP"> </a>
+					<div class="fixedFont">&lt;static&gt; 
+					
+					
+					<span class="light">Dwt.</span><b>CLIP</b>
+					
+					</div>
+					<div class="description">
+						Clip on overflow.
+						
+						
+					</div>
+					
+					
+
+						
+						
+						
+						
+
+					<hr />
+				
+					<a name=".DEFAULT"> </a>
+					<div class="fixedFont">&lt;static&gt; 
+					
+					
+					<span class="light">Dwt.</span><b>DEFAULT</b>
+					
+					</div>
+					<div class="description">
+						Default value. Used when setting such things as size and bounds to indicate a
+component should not be set. For example if setting size and not wishing to set
+the height.
+<pre>
+Dwt.setSize(htmlElement, 100, Dwt.DEFAULT)
+</pre>
+						
+						
+					</div>
+					
+					
+
+						
+						
+						
+						
+
+					<hr />
+				
+					<a name=".DISPLAY_BLOCK"> </a>
+					<div class="fixedFont">&lt;static&gt; 
+					
+					
+					<span class="light">Dwt.</span><b>DISPLAY_BLOCK</b>
+					
+					</div>
+					<div class="description">
+						Block display style.
+						
+						
+					</div>
+					
+					
+
+						
+						
+						
+						
+
+					<hr />
+				
+					<a name=".DISPLAY_INLINE"> </a>
+					<div class="fixedFont">&lt;static&gt; 
+					
+					
+					<span class="light">Dwt.</span><b>DISPLAY_INLINE</b>
+					
+					</div>
+					<div class="description">
+						Inline display style.
+						
+						
+					</div>
+					
+					
+
+						
+						
+						
+						
+
+					<hr />
+				
+					<a name=".DISPLAY_NONE"> </a>
+					<div class="fixedFont">&lt;static&gt; 
+					
+					
+					<span class="light">Dwt.</span><b>DISPLAY_NONE</b>
+					
+					</div>
+					<div class="description">
+						No display style.
+						
+						
+					</div>
+					
+					
+
+						
+						
+						
+						
+
+					<hr />
+				
+					<a name=".DISPLAY_TABLE_CELL"> </a>
+					<div class="fixedFont">&lt;static&gt; 
+					
+					
+					<span class="light">Dwt.</span><b>DISPLAY_TABLE_CELL</b>
+					
+					</div>
+					<div class="description">
+						Table cell style.
+						
+						
+					</div>
+					
+					
+
+						
+						
+						
+						
+
+					<hr />
+				
+					<a name=".DISPLAY_TABLE_ROW"> </a>
+					<div class="fixedFont">&lt;static&gt; 
+					
+					
+					<span class="light">Dwt.</span><b>DISPLAY_TABLE_ROW</b>
+					
+					</div>
+					<div class="description">
+						Table row style.
+						
+						
+					</div>
+					
+					
+
+						
+						
+						
+						
+
+					<hr />
+				
+					<a name=".DND_DROP_COPY"> </a>
+					<div class="fixedFont">&lt;static&gt; 
+					
+					
+					<span class="light">Dwt.</span><b>DND_DROP_COPY</b>
+					
+					</div>
+					<div class="description">
+						Copy drag and drop operation.
+						
+						
+					</div>
+					
+					
+
+						
+						
+						
+						
+
+					<hr />
+				
+					<a name=".DND_DROP_MOVE"> </a>
+					<div class="fixedFont">&lt;static&gt; 
+					
+					
+					<span class="light">Dwt.</span><b>DND_DROP_MOVE</b>
+					
+					</div>
+					<div class="description">
+						Move drag and drop operation.
+						
+						
+					</div>
+					
+					
+
+						
+						
+						
+						
+
+					<hr />
+				
+					<a name=".DND_DROP_NONE"> </a>
+					<div class="fixedFont">&lt;static&gt; 
+					
+					
+					<span class="light">Dwt.</span><b>DND_DROP_NONE</b>
+					
+					</div>
+					<div class="description">
+						No drag and drop operation.
+						
+						
+					</div>
+					
+					
+
+						
+						
+						
+						
+
+					<hr />
+				
+					<a name=".FIXED_SCROLL"> </a>
+					<div class="fixedFont">&lt;static&gt; 
+					
+					
+					<span class="light">Dwt.</span><b>FIXED_SCROLL</b>
+					
+					</div>
+					<div class="description">
+						Always have scrollbars whether content overflows or not.
+						
+						
+					</div>
+					
+					
+
+						
+						
+						
+						
+
+					<hr />
+				
+					<a name=".FIXED_STYLE"> </a>
+					<div class="fixedFont">&lt;static&gt; 
+					
+					
+					<span class="light">Dwt.</span><b>FIXED_STYLE</b>
+					
+					</div>
+					<div class="description">
+						Fixed position style.
+						
+						
+					</div>
+					
+					
+
+						
+						
+						
+						
+
+					<hr />
+				
+					<a name=".LOC_NOWHERE"> </a>
+					<div class="fixedFont">&lt;static&gt; 
+					
+					
+					<span class="light">Dwt.</span><b>LOC_NOWHERE</b>
+					
+					</div>
+					<div class="description">
+						Offscreen position. Used when setting a elements position.
+						
+						
+					</div>
+					
+					
+
+						
+						
+						
+						
+
+					<hr />
+				
+					<a name=".NO_REPEAT"> </a>
+					<div class="fixedFont">&lt;static&gt; 
+					
+					
+					<span class="light">Dwt.</span><b>NO_REPEAT</b>
+					
+					</div>
+					<div class="description">
+						Do not repeat background image.
+						
+						
+					</div>
+					
+					
+
+						
+						
+						
+						
+
+					<hr />
+				
+					<a name=".RELATIVE_STYLE"> </a>
+					<div class="fixedFont">&lt;static&gt; 
+					
+					
+					<span class="light">Dwt.</span><b>RELATIVE_STYLE</b>
+					
+					</div>
+					<div class="description">
+						Relative position style.
+						
+						
+					</div>
+					
+					
+
+						
+						
+						
+						
+
+					<hr />
+				
+					<a name=".REPEAT"> </a>
+					<div class="fixedFont">&lt;static&gt; 
+					
+					
+					<span class="light">Dwt.</span><b>REPEAT</b>
+					
+					</div>
+					<div class="description">
+						Repeat background image.
+						
+						
+					</div>
+					
+					
+
+						
+						
+						
+						
+
+					<hr />
+				
+					<a name=".REPEAT_X"> </a>
+					<div class="fixedFont">&lt;static&gt; 
+					
+					
+					<span class="light">Dwt.</span><b>REPEAT_X</b>
+					
+					</div>
+					<div class="description">
+						Repeat background image horizontally.
+						
+						
+					</div>
+					
+					
+
+						
+						
+						
+						
+
+					<hr />
+				
+					<a name=".REPEAT_Y"> </a>
+					<div class="fixedFont">&lt;static&gt; 
+					
+					
+					<span class="light">Dwt.</span><b>REPEAT_Y</b>
+					
+					</div>
+					<div class="description">
+						Repeat background image vertically.
+						
+						
+					</div>
+					
+					
+
+						
+						
+						
+						
+
+					<hr />
+				
+					<a name=".SCROLL"> </a>
+					<div class="fixedFont">&lt;static&gt; 
+					
+					
+					<span class="light">Dwt.</span><b>SCROLL</b>
+					
+					</div>
+					<div class="description">
+						Automatically create scrollbars if content overflows.
+						
+						
+					</div>
+					
+					
+
+						
+						
+						
+						
+
+					<hr />
+				
+					<a name=".SCROLL_X"> </a>
+					<div class="fixedFont">&lt;static&gt; 
+					
+					
+					<span class="light">Dwt.</span><b>SCROLL_X</b>
+					
+					</div>
+					<div class="description">
+						Only show scrollbars on X when content overflows.
+						
+						
+					</div>
+					
+					
+
+						
+						
+						
+						
+
+					<hr />
+				
+					<a name=".SCROLL_Y"> </a>
+					<div class="fixedFont">&lt;static&gt; 
+					
+					
+					<span class="light">Dwt.</span><b>SCROLL_Y</b>
+					
+					</div>
+					<div class="description">
+						Only show scrollbars on Y when content overflows.
+						
+						
+					</div>
+					
+					
+
+						
+						
+						
+						
+
+					<hr />
+				
+					<a name=".SCROLLBAR_WIDTH"> </a>
+					<div class="fixedFont">&lt;static&gt; 
+					
+					
+					<span class="light">Dwt.</span><b>SCROLLBAR_WIDTH</b>
+					
+					</div>
+					<div class="description">
+						Ballpark figure for width of a scrollbar.
+						
+						
+					</div>
+					
+					
+
+						
+						
+						
+						
+
+					<hr />
+				
+					<a name=".STATIC_STYLE"> </a>
+					<div class="fixedFont">&lt;static&gt; 
+					
+					
+					<span class="light">Dwt.</span><b>STATIC_STYLE</b>
+					
+					</div>
+					<div class="description">
+						Static position style.
+						
+						
+					</div>
+					
+					
+
+						
+						
+						
+						
+
+					<hr />
+				
+					<a name=".VISIBLE"> </a>
+					<div class="fixedFont">&lt;static&gt; 
+					
+					
+					<span class="light">Dwt.</span><b>VISIBLE</b>
+					
+					</div>
+					<div class="description">
+						Allow overflow to be visible.
+						
+						
+					</div>
+					
+					
+
+						
+						
+						
+						
+
+					<hr />
+				
+					<a name=".Z_BUSY"> </a>
+					<div class="fixedFont">&lt;static&gt; 
+					
+					
+					<span class="light">Dwt.</span><b>Z_BUSY</b>
+					
+					</div>
+					<div class="description">
+						This layer appears in front of other layers to block all user mouse input.
+						
+						
+					</div>
+					
+					
+
+						
+						
+						
+						
+
+					<hr />
+				
+					<a name=".Z_CURTAIN"> </a>
+					<div class="fixedFont">&lt;static&gt; 
+					
+					<span class="light">{int}</span>
+					<span class="light">Dwt.</span><b>Z_CURTAIN</b>
+					
+					</div>
+					<div class="description">
+						The curtain layer.
+						
+						
+					</div>
+					
+					
+
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">See:</dt>
+							
+							<dd><a href="../symbols/DwtShell.html">DwtShell</a></dd>
+							
+							</dl>
+						
+						
+
+					<hr />
+				
+					<a name=".Z_DIALOG"> </a>
+					<div class="fixedFont">&lt;static&gt; 
+					
+					
+					<span class="light">Dwt.</span><b>Z_DIALOG</b>
+					
+					</div>
+					<div class="description">
+						Dialog layer. Dialogs are positioned at this layer.
+						
+						
+					</div>
+					
+					
+
+						
+						
+						
+						
+
+					<hr />
+				
+					<a name=".Z_DIALOG_MENU"> </a>
+					<div class="fixedFont">&lt;static&gt; 
+					
+					
+					<span class="light">Dwt.</span><b>Z_DIALOG_MENU</b>
+					
+					</div>
+					<div class="description">
+						Used by menus that are part of a dialog.
+						
+						
+					</div>
+					
+					
+
+						
+						
+						
+						
+
+					<hr />
+				
+					<a name=".Z_DND"> </a>
+					<div class="fixedFont">&lt;static&gt; 
+					
+					
+					<span class="light">Dwt.</span><b>Z_DND</b>
+					
+					</div>
+					<div class="description">
+						Drag and Drop (DnD) icon layer. DnD icons are positioned at this layer so they
+move across the top of other components.
+						
+						
+					</div>
+					
+					
+
+						
+						
+						
+						
+
+					<hr />
+				
+					<a name=".Z_HIDDEN"> </a>
+					<div class="fixedFont">&lt;static&gt; 
+					
+					
+					<span class="light">Dwt.</span><b>Z_HIDDEN</b>
+					
+					</div>
+					<div class="description">
+						Hidden layer. Elements at this layer will be hidden from view.
+						
+						
+					</div>
+					
+					
+
+						
+						
+						
+						
+
+					<hr />
+				
+					<a name=".Z_MENU"> </a>
+					<div class="fixedFont">&lt;static&gt; 
+					
+					
+					<span class="light">Dwt.</span><b>Z_MENU</b>
+					
+					</div>
+					<div class="description">
+						Popup menu layer. Used by the menu components.
+						
+						
+					</div>
+					
+					
+
+						
+						
+						
+						
+
+					<hr />
+				
+					<a name=".Z_SPLASH"> </a>
+					<div class="fixedFont">&lt;static&gt; 
+					
+					
+					<span class="light">Dwt.</span><b>Z_SPLASH</b>
+					
+					</div>
+					<div class="description">
+						Used by the splash screens.
+						
+						
+					</div>
+					
+					
+
+						
+						
+						
+						
+
+					<hr />
+				
+					<a name=".Z_TOAST"> </a>
+					<div class="fixedFont">&lt;static&gt; 
+					
+					
+					<span class="light">Dwt.</span><b>Z_TOAST</b>
+					
+					</div>
+					<div class="description">
+						The toast layer.
+						
+						
+					</div>
+					
+					
+
+						
+						
+						
+						
+
+					<hr />
+				
+					<a name=".Z_TOOLTIP"> </a>
+					<div class="fixedFont">&lt;static&gt; 
+					
+					
+					<span class="light">Dwt.</span><b>Z_TOOLTIP</b>
+					
+					</div>
+					<div class="description">
+						Tooltips layer.
+						
+						
+					</div>
+					
+					
+
+						
+						
+						
+						
+
+					<hr />
+				
+					<a name=".Z_VEIL"> </a>
+					<div class="fixedFont">&lt;static&gt; 
+					
+					
+					<span class="light">Dwt.</span><b>Z_VEIL</b>
+					
+					</div>
+					<div class="description">
+						Veil layer. The veil appears just behind modal dialogs render other components
+unable to receive mouse input.
+						
+						
+					</div>
+					
+					
+
+						
+						
+						
+						
+
+					<hr />
+				
+					<a name=".Z_VIEW"> </a>
+					<div class="fixedFont">&lt;static&gt; 
+					
+					
+					<span class="light">Dwt.</span><b>Z_VIEW</b>
+					
+					</div>
+					<div class="description">
+						Visible layer. Elements at this layer will be in view.
+						
+						
+					</div>
+					
+					
+
+						
+						
+						
+						
+
+					
+				
+			
+
+<!-- ============================== method details ========================= -->		
+			
+				<div class="sectionTitle">
+					Method Detail
+				</div>
+				
+					<a name=".addClass"> </a>
+					<div class="fixedFont">&lt;static&gt; 
+					
+					
+					<span class="light">Dwt.</span><b>addClass</b>(el, c)
+					
+					</div>
+					<div class="description">
+						Adds the given class name to the element's CSS class names
+						
+						
+					</div>
+					
+					
+					
+						
+							<dl class="detailList">
+							<dt class="heading">Parameters:</dt>
+							
+								<dt>
+									<span class="light fixedFont">{HTMLElement}</span> <b>el</b>
+									
+								</dt>
+								<dd>the HTML Element to which to add the class name</dd>
+							
+								<dt>
+									<span class="light fixedFont">{string}</span> <b>c</b>
+									
+								</dt>
+								<dd>the class name</dd>
+							
+							</dl>
+						
+						
+						
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">See:</dt>
+							
+								<dd><a href="#delClass">#delClass</a></dd>
+							
+							</dl>
+						
+
+					<hr />
+				
+					<a name=".byClassName"> </a>
+					<div class="fixedFont">&lt;static&gt; 
+					
+					<span class="light">{Array}</span>
+					<span class="light">Dwt.</span><b>byClassName</b>(className, ancestor)
+					
+					</div>
+					<div class="description">
+						Get all elements of the given class name. Similar to
+document.getElementsByClassName(), but returning an Array instead
+of a NodeList.
+						
+						
+					</div>
+					
+					
+					
+						
+							<dl class="detailList">
+							<dt class="heading">Parameters:</dt>
+							
+								<dt>
+									<span class="light fixedFont">{String}</span> <b>className</b>
+									
+								</dt>
+								<dd></dd>
+							
+								<dt>
+									<span class="light fixedFont">{HTMLElement}</span> <b>ancestor</b>
+									
+								</dt>
+								<dd>An optional ancestor element,
+                     defaults to the document</dd>
+							
+							</dl>
+						
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">Returns:</dt>
+							
+								<dd><span class="light fixedFont">{Array}</span> </dd>
+							
+							</dl>
+						
+						
+						
+
+					<hr />
+				
+					<a name=".byTag"> </a>
+					<div class="fixedFont">&lt;static&gt; 
+					
+					<span class="light">{Array}</span>
+					<span class="light">Dwt.</span><b>byTag</b>(tagName, ancestor)
+					
+					</div>
+					<div class="description">
+						Get all elements of a certain tag name. Similar to
+document.getElementsByTagName(), but returning an Array instead of
+a NodeList.
+						
+						
+					</div>
+					
+					
+					
+						
+							<dl class="detailList">
+							<dt class="heading">Parameters:</dt>
+							
+								<dt>
+									<span class="light fixedFont">{String}</span> <b>tagName</b>
+									
+								</dt>
+								<dd>the tag name, such as "A"</dd>
+							
+								<dt>
+									<span class="light fixedFont">{HTMLElement}</span> <b>ancestor</b>
+									
+								</dt>
+								<dd>An optional ancestor element,
+                     defaults to the document</dd>
+							
+							</dl>
+						
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">Returns:</dt>
+							
+								<dd><span class="light fixedFont">{Array}</span> </dd>
+							
+							</dl>
+						
+						
+						
+
+					<hr />
+				
+					<a name=".condClass"> </a>
+					<div class="fixedFont">&lt;static&gt; 
+					
+					
+					<span class="light">Dwt.</span><b>condClass</b>(el, condition, a, b)
+					
+					</div>
+					<div class="description">
+						Conditionally add or remove a class name from an element
+						
+						
+					</div>
+					
+					
+					
+						
+							<dl class="detailList">
+							<dt class="heading">Parameters:</dt>
+							
+								<dt>
+									<span class="light fixedFont">{HTMLElement}</span> <b>el</b>
+									
+								</dt>
+								<dd>the target element</dd>
+							
+								<dt>
+									<span class="light fixedFont">{boolean}</span> <b>condition</b>
+									
+								</dt>
+								<dd>the condition to check</dd>
+							
+								<dt>
+									<span class="light fixedFont">{string}</span> <b>a</b>
+									
+								</dt>
+								<dd>the class name when condition is <code>true</code></dd>
+							
+								<dt>
+									<span class="light fixedFont">{string}</span> <b>b</b>
+									
+								</dt>
+								<dd>the class name when condition is <code>false</code></dd>
+							
+							</dl>
+						
+						
+						
+						
+						
+						
+						
+
+					<hr />
+				
+					<a name=".createLinearGradientInfo"> </a>
+					<div class="fixedFont">&lt;static&gt; 
+					
+					
+					<span class="light">Dwt.</span><b>createLinearGradientInfo</b>(startColor, endColor, direction)
+					
+					</div>
+					<div class="description">
+						-- FF 3.6+
+   background: -moz-linear-gradient(black, white);
+-- Safari 4+, Chrome 2+
+   background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #000000), color-stop(100%, #ffffff));
+-- Safari 5.1+, Chrome 10+
+   background: -webkit-linear-gradient(top, black, white);
+-- Opera 11.10
+   background: -o-linear-gradient(black, white);
+-- IE6 & IE7
+   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#000000', endColorstr='#ffffff');
+-- IE8 & IE9
+   -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#000000', endColorstr='#ffffff')";
+-- IE10
+   background: -ms-linear-gradient(black, white);
+-- the standard
+   background: linear-gradient(black, white);
+						
+						
+					</div>
+					
+					
+					
+						
+							<dl class="detailList">
+							<dt class="heading">Parameters:</dt>
+							
+								<dt>
+									<b>startColor</b>
+									
+								</dt>
+								<dd></dd>
+							
+								<dt>
+									<b>endColor</b>
+									
+								</dt>
+								<dd></dd>
+							
+								<dt>
+									<b>direction</b>
+									
+								</dt>
+								<dd></dd>
+							
+							</dl>
+						
+						
+						
+						
+						
+						
+						
+
+					<hr />
+				
+					<a name=".delClass"> </a>
+					<div class="fixedFont">&lt;static&gt; 
+					
+					
+					<span class="light">Dwt.</span><b>delClass</b>(el, del, add)
+					
+					</div>
+					<div class="description">
+						Remove the <code>del</code> class name from the element's CSS class names and
+optionally add <code>add</code> class name if given provided
+						
+						
+					</div>
+					
+					
+					
+						
+							<dl class="detailList">
+							<dt class="heading">Parameters:</dt>
+							
+								<dt>
+									<span class="light fixedFont">{HTMLElement}</span> <b>el</b>
+									
+								</dt>
+								<dd>HTML Element to which to add/delete class names</dd>
+							
+								<dt>
+									<span class="light fixedFont">{string}</span> <b>del</b>
+									<i>Optional</i>
+								</dt>
+								<dd>the class name to delete</dd>
+							
+								<dt>
+									<span class="light fixedFont">{string}</span> <b>add</b>
+									<i>Optional</i>
+								</dt>
+								<dd>the class name to add</dd>
+							
+							</dl>
+						
+						
+						
+						
+						
+						
+						
+
+					<hr />
+				
+					<a name=".doOverlap"> </a>
+					<div class="fixedFont">&lt;static&gt; 
+					
+					
+					<span class="light">Dwt.</span><b>doOverlap</b>(el1, el2)
+					
+					</div>
+					<div class="description">
+						Returns true if the two elements overlap.
+						
+						
+					</div>
+					
+					
+					
+						
+							<dl class="detailList">
+							<dt class="heading">Parameters:</dt>
+							
+								<dt>
+									<b>el1</b>
+									
+								</dt>
+								<dd></dd>
+							
+								<dt>
+									<b>el2</b>
+									
+								</dt>
+								<dd></dd>
+							
+							</dl>
+						
+						
+						
+						
+						
+						
+						
+
+					<hr />
+				
+					<a name=".findAncestor"> </a>
+					<div class="fixedFont">&lt;static&gt; 
+					
+					<span class="light">{DOMElement}</span>
+					<span class="light">Dwt.</span><b>findAncestor</b>(domElement, attrName)
+					
+					</div>
+					<div class="description">
+						Finds an ancestor element with a non-empty value for the given attr.
+						
+						
+					</div>
+					
+					
+					
+						
+							<dl class="detailList">
+							<dt class="heading">Parameters:</dt>
+							
+								<dt>
+									<span class="light fixedFont">{DOMElement}</span> <b>domElement</b>
+									
+								</dt>
+								<dd>the starting DOM element</dd>
+							
+								<dt>
+									<span class="light fixedFont">{string}</span> <b>attrName</b>
+									
+								</dt>
+								<dd>the attribute name</dd>
+							
+							</dl>
+						
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">Returns:</dt>
+							
+								<dd><span class="light fixedFont">{DOMElement}</span> the DOM element</dd>
+							
+							</dl>
+						
+						
+						
+
+					<hr />
+				
+					<a name=".getAncestors"> </a>
+					<div class="fixedFont">&lt;static&gt; 
+					
+					<span class="light">{Array}</span>
+					<span class="light">Dwt.</span><b>getAncestors</b>(childNode, parentNode, includeChild)
+					
+					</div>
+					<div class="description">
+						Get ancestor elements of the given node, up to and including the given
+parent node. If no parent is given, assume the root document node. If the
+parent node is not an ancestor of the child, return <code>null</code>.
+						
+						
+					</div>
+					
+					
+					
+						
+							<dl class="detailList">
+							<dt class="heading">Parameters:</dt>
+							
+								<dt>
+									<span class="light fixedFont">{HTMLElement}</span> <b>childNode</b>
+									
+								</dt>
+								<dd>the child HTML element</dd>
+							
+								<dt>
+									<span class="light fixedFont">{HTMLElement}</span> <b>parentNode</b>
+									
+								</dt>
+								<dd>the parent HTML element</dd>
+							
+								<dt>
+									<span class="light fixedFont">{Boolean}</span> <b>includeChild</b>
+									
+								</dt>
+								<dd>if true, include the child itself</dd>
+							
+							</dl>
+						
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">Returns:</dt>
+							
+								<dd><span class="light fixedFont">{Array}</span> a list of HTML elements</dd>
+							
+							</dl>
+						
+						
+						
+
+					<hr />
+				
+					<a name=".getBounds"> </a>
+					<div class="fixedFont">&lt;static&gt; 
+					
+					<span class="light">{<a href="../symbols/DwtRectangle.html">DwtRectangle</a>}</span>
+					<span class="light">Dwt.</span><b>getBounds</b>(htmlElement, rect)
+					
+					</div>
+					<div class="description">
+						Gets the bounds of an HTML element.
+						
+						
+					</div>
+					
+					
+					
+						
+							<dl class="detailList">
+							<dt class="heading">Parameters:</dt>
+							
+								<dt>
+									<span class="light fixedFont">{HTMLElement}</span> <b>htmlElement</b>
+									
+								</dt>
+								<dd>the HTML element</dd>
+							
+								<dt>
+									<b>rect</b>
+									
+								</dt>
+								<dd></dd>
+							
+							</dl>
+						
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">Returns:</dt>
+							
+								<dd><span class="light fixedFont">{<a href="../symbols/DwtRectangle.html">DwtRectangle</a>}</span> the elements bounds</dd>
+							
+							</dl>
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">See:</dt>
+							
+								<dd><a href="#setBounds">#setBounds</a></dd>
+							
+								<dd><a href="#getInsetBounds">#getInsetBounds</a></dd>
+							
+								<dd><a href="#getLocation">#getLocation</a></dd>
+							
+								<dd><a href="#getSize">#getSize</a></dd>
+							
+							</dl>
+						
+
+					<hr />
+				
+					<a name=".getCursor"> </a>
+					<div class="fixedFont">&lt;static&gt; 
+					
+					<span class="light">{string}</span>
+					<span class="light">Dwt.</span><b>getCursor</b>(htmlElement)
+					
+					</div>
+					<div class="description">
+						Gets the element cursor for a given HTML element.
+						
+						
+					</div>
+					
+					
+					
+						
+							<dl class="detailList">
+							<dt class="heading">Parameters:</dt>
+							
+								<dt>
+									<span class="light fixedFont">{HTMLElement}</span> <b>htmlElement</b>
+									
+								</dt>
+								<dd>the HTML element</dd>
+							
+							</dl>
+						
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">Returns:</dt>
+							
+								<dd><span class="light fixedFont">{string}</span> the html elements cursor</dd>
+							
+							</dl>
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">See:</dt>
+							
+								<dd><a href="#setCursor">#setCursor</a></dd>
+							
+							</dl>
+						
+
+					<hr />
+				
+					<a name=".getHtmlExtent"> </a>
+					<div class="fixedFont">&lt;static&gt; 
+					
+					<span class="light">{<a href="../symbols/DwtPoint.html">DwtPoint</a>}</span>
+					<span class="light">Dwt.</span><b>getHtmlExtent</b>(html)
+					
+					</div>
+					<div class="description">
+						Measure the extent in pixels of a section of html. This is not the worlds cheapest
+method to invoke so do so judiciously
+						
+						
+					</div>
+					
+					
+					
+						
+							<dl class="detailList">
+							<dt class="heading">Parameters:</dt>
+							
+								<dt>
+									<span class="light fixedFont">{string}</span> <b>html</b>
+									
+								</dt>
+								<dd>the html content for which that extents are to be calculated</dd>
+							
+							</dl>
+						
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">Returns:</dt>
+							
+								<dd><span class="light fixedFont">{<a href="../symbols/DwtPoint.html">DwtPoint</a>}</span> the extent of the content</dd>
+							
+							</dl>
+						
+						
+						
+
+					<hr />
+				
+					<a name=".getId"> </a>
+					<div class="fixedFont">&lt;static&gt; 
+					
+					<span class="light">{string}</span>
+					<span class="light">Dwt.</span><b>getId</b>(element, prefix)
+					
+					</div>
+					<div class="description">
+						This method is used to query an element for its id, generating one if it
+isn't set.
+						
+						
+					</div>
+					
+					
+					
+						
+							<dl class="detailList">
+							<dt class="heading">Parameters:</dt>
+							
+								<dt>
+									<b>element</b>
+									
+								</dt>
+								<dd></dd>
+							
+								<dt>
+									<b>prefix</b>
+									
+								</dt>
+								<dd></dd>
+							
+							</dl>
+						
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">Returns:</dt>
+							
+								<dd><span class="light fixedFont">{string}</span> the element ID</dd>
+							
+							</dl>
+						
+						
+						
+
+					<hr />
+				
+					<a name=".getInsetBounds"> </a>
+					<div class="fixedFont">&lt;static&gt; 
+					
+					<span class="light">{<a href="../symbols/DwtRectangle.html">DwtRectangle</a>}</span>
+					<span class="light">Dwt.</span><b>getInsetBounds</b>(htmlElement)
+					
+					</div>
+					<div class="description">
+						Gets the bounds of an HTML element, excluding borders and paddings.
+						
+						
+					</div>
+					
+					
+					
+						
+							<dl class="detailList">
+							<dt class="heading">Parameters:</dt>
+							
+								<dt>
+									<span class="light fixedFont">{HTMLElement}</span> <b>htmlElement</b>
+									
+								</dt>
+								<dd>the HTML element</dd>
+							
+							</dl>
+						
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">Returns:</dt>
+							
+								<dd><span class="light fixedFont">{<a href="../symbols/DwtRectangle.html">DwtRectangle</a>}</span> the elements bounds</dd>
+							
+							</dl>
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">See:</dt>
+							
+								<dd><a href="#setBounds">#setBounds</a></dd>
+							
+								<dd><a href="#getInsetBounds">#getInsetBounds</a></dd>
+							
+								<dd><a href="#getLocation">#getLocation</a></dd>
+							
+								<dd><a href="#getSize">#getSize</a></dd>
+							
+							</dl>
+						
+
+					<hr />
+				
+					<a name=".getLocation"> </a>
+					<div class="fixedFont">&lt;static&gt; 
+					
+					<span class="light">{<a href="../symbols/DwtPoint.html">DwtPoint</a>}</span>
+					<span class="light">Dwt.</span><b>getLocation</b>(htmlElement, point)
+					
+					</div>
+					<div class="description">
+						Gets the location of an HTML element.
+						
+						
+					</div>
+					
+					
+					
+						
+							<dl class="detailList">
+							<dt class="heading">Parameters:</dt>
+							
+								<dt>
+									<span class="light fixedFont">{HTMLElement}</span> <b>htmlElement</b>
+									
+								</dt>
+								<dd>the HTML element</dd>
+							
+								<dt>
+									<b>point</b>
+									
+								</dt>
+								<dd></dd>
+							
+							</dl>
+						
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">Returns:</dt>
+							
+								<dd><span class="light fixedFont">{<a href="../symbols/DwtPoint.html">DwtPoint</a>}</span> the location of the HTML element</dd>
+							
+							</dl>
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">See:</dt>
+							
+								<dd><a href="#setLocation">#setLocation</a></dd>
+							
+								<dd><a href="#getBounds">#getBounds</a></dd>
+							
+								<dd><a href="#getSize">#getSize</a></dd>
+							
+							</dl>
+						
+
+					<hr />
+				
+					<a name=".getNextId"> </a>
+					<div class="fixedFont">&lt;static&gt; 
+					
+					<span class="light">{string}</span>
+					<span class="light">Dwt.</span><b>getNextId</b>(prefix)
+					
+					</div>
+					<div class="description">
+						This method is used to generate a unique id to be used for an HTML element's id
+attribute.
+						
+						
+					</div>
+					
+					
+					
+						
+							<dl class="detailList">
+							<dt class="heading">Parameters:</dt>
+							
+								<dt>
+									<b>prefix</b>
+									
+								</dt>
+								<dd></dd>
+							
+							</dl>
+						
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">Returns:</dt>
+							
+								<dd><span class="light fixedFont">{string}</span> the next available element ID</dd>
+							
+							</dl>
+						
+						
+						
+
+					<hr />
+				
+					<a name=".getOuterSize"> </a>
+					<div class="fixedFont">&lt;static&gt; 
+					
+					<span class="light">{<a href="../symbols/DwtPoint.html">DwtPoint</a>}</span>
+					<span class="light">Dwt.</span><b>getOuterSize</b>(htmlElement, point)
+					
+					</div>
+					<div class="description">
+						Gets the outer size -- that is, the size including margins, padding, and borders -- of an
+HTML element.
+						
+						
+					</div>
+					
+					
+					
+						
+							<dl class="detailList">
+							<dt class="heading">Parameters:</dt>
+							
+								<dt>
+									<span class="light fixedFont">{HTMLElement}</span> <b>htmlElement</b>
+									
+								</dt>
+								<dd>the HTML element</dd>
+							
+								<dt>
+									<b>point</b>
+									
+								</dt>
+								<dd></dd>
+							
+							</dl>
+						
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">Returns:</dt>
+							
+								<dd><span class="light fixedFont">{<a href="../symbols/DwtPoint.html">DwtPoint</a>}</span> the elements size, margins included</dd>
+							
+							</dl>
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">See:</dt>
+							
+								<dd><a href="#getSize">#getSize</a></dd>
+							
+								<dd><a href="#getBounds">#getBounds</a></dd>
+							
+								<dd><a href="#setBounds">#setBounds</a></dd>
+							
+								<dd><a href="#getInsetBounds">#getInsetBounds</a></dd>
+							
+								<dd><a href="#getLocation">#getLocation</a></dd>
+							
+							</dl>
+						
+
+					<hr />
+				
+					<a name=".getParams"> </a>
+					<div class="fixedFont">&lt;static&gt; 
+					
+					
+					<span class="light">Dwt.</span><b>getParams</b>(args, paramNames)
+					
+					</div>
+					<div class="description">
+						Normalizes an argument list into a hash with the given argument names.
+If a single hash argument is passed, it is recognized as a params hash
+and returned. Otherwise, the argument list is exploded into a params
+hash with the given param names.
+						
+						
+					</div>
+					
+					
+					
+						
+							<dl class="detailList">
+							<dt class="heading">Parameters:</dt>
+							
+								<dt>
+									<span class="light fixedFont">{<a href="../symbols/Object.html">Object</a>}</span> <b>args</b>
+									
+								</dt>
+								<dd>Array-like structure of arguments</dd>
+							
+								<dt>
+									<span class="light fixedFont">{array}</span> <b>paramNames</b>
+									
+								</dt>
+								<dd>an ordered list of param names</dd>
+							
+							</dl>
+						
+						
+						
+						
+						
+						
+						
+
+					<hr />
+				
+					<a name=".getScrollStyle"> </a>
+					<div class="fixedFont">&lt;static&gt; 
+					
+					<span class="light">{<a href="../symbols/Dwt.html#.CLIP">Dwt.CLIP</a>|<a href="../symbols/Dwt.html#.VISIBLE">Dwt.VISIBLE</a>|<a href="../symbols/Dwt.html#.SCROLL">Dwt.SCROLL</a>|<a href="../symbols/Dwt.html#.FIXED_SCROLL">Dwt.FIXED_SCROLL</a>}</span>
+					<span class="light">Dwt.</span><b>getScrollStyle</b>(htmlElement)
+					
+					</div>
+					<div class="description">
+						Returns <code>htmlElement</code>'s scroll style. The scroll style determines the element's
+behaviour when content overflows its boundaries. Possible values are:
+<ul>
+<li><i>Dwt.CLIP</i> - Clip on overflow</li>
+<li><i>Dwt.VISIBLE</i> - Allow overflow to be visible</li>
+<li><i>Dwt.SCROLL</i> - Automatically create scrollbars if content overflows</li>
+<li><i>Dwt.FIXED_SCROLL</i> - Always have scrollbars whether content overflows or not</li>
+</ul>
+						
+						
+					</div>
+					
+					
+					
+						
+							<dl class="detailList">
+							<dt class="heading">Parameters:</dt>
+							
+								<dt>
+									<span class="light fixedFont">{HTMLElement}</span> <b>htmlElement</b>
+									
+								</dt>
+								<dd>HTML element</dd>
+							
+							</dl>
+						
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">Returns:</dt>
+							
+								<dd><span class="light fixedFont">{<a href="../symbols/Dwt.html#.CLIP">Dwt.CLIP</a>|<a href="../symbols/Dwt.html#.VISIBLE">Dwt.VISIBLE</a>|<a href="../symbols/Dwt.html#.SCROLL">Dwt.SCROLL</a>|<a href="../symbols/Dwt.html#.FIXED_SCROLL">Dwt.FIXED_SCROLL</a>}</span> the elements scroll style</dd>
+							
+							</dl>
+						
+						
+						
+
+					<hr />
+				
+					<a name=".getSelectionEnd"> </a>
+					<div class="fixedFont">&lt;static&gt; 
+					
+					<span class="light">{number}</span>
+					<span class="light">Dwt.</span><b>getSelectionEnd</b>(input)
+					
+					</div>
+					<div class="description">
+						Retrieves the end of the selection.
+						
+						
+					</div>
+					
+					
+					
+						
+							<dl class="detailList">
+							<dt class="heading">Parameters:</dt>
+							
+								<dt>
+									<span class="light fixedFont">{input|iframe}</span> <b>input</b>
+									
+								</dt>
+								<dd>the input for which to find the selection end point. This
+		may be a text input field or an iframe in design mode</dd>
+							
+							</dl>
+						
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">Returns:</dt>
+							
+								<dd><span class="light fixedFont">{number}</span> the starting position of the selection</dd>
+							
+							</dl>
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">See:</dt>
+							
+								<dd><a href="#getSelectionStart">#getSelectionStart</a></dd>
+							
+								<dd><a href="#setSelectionText">#setSelectionText</a></dd>
+							
+								<dd><a href="#setSelectionRange">#setSelectionRange</a></dd>
+							
+								<dd><a href="#moveCursorToEnd">#moveCursorToEnd</a></dd>
+							
+							</dl>
+						
+
+					<hr />
+				
+					<a name=".getSelectionStart"> </a>
+					<div class="fixedFont">&lt;static&gt; 
+					
+					<span class="light">{number}</span>
+					<span class="light">Dwt.</span><b>getSelectionStart</b>(input)
+					
+					</div>
+					<div class="description">
+						Retrieves the start of the selection.  For a collapsed range, this is
+equivalent to <a href="#getSelectionEnd">#getSelectionEnd</a>.
+						
+						
+					</div>
+					
+					
+					
+						
+							<dl class="detailList">
+							<dt class="heading">Parameters:</dt>
+							
+								<dt>
+									<span class="light fixedFont">{input|iframe}</span> <b>input</b>
+									
+								</dt>
+								<dd>input for which to find the selection start point. This
+		may be a text input field or an iframe in design mode</dd>
+							
+							</dl>
+						
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">Returns:</dt>
+							
+								<dd><span class="light fixedFont">{number}</span> starting position of the selection</dd>
+							
+							</dl>
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">See:</dt>
+							
+								<dd><a href="#getSelectionEnd">#getSelectionEnd</a></dd>
+							
+								<dd><a href="#setSelectionText">#setSelectionText</a></dd>
+							
+								<dd><a href="#setSelectionRange">#setSelectionRange</a></dd>
+							
+								<dd><a href="#moveCursorToEnd">#moveCursorToEnd</a></dd>
+							
+							</dl>
+						
+
+					<hr />
+				
+					<a name=".getSize"> </a>
+					<div class="fixedFont">&lt;static&gt; 
+					
+					<span class="light">{<a href="../symbols/DwtPoint.html">DwtPoint</a>}</span>
+					<span class="light">Dwt.</span><b>getSize</b>(htmlElement, point, getFromStyle)
+					
+					</div>
+					<div class="description">
+						Gets the size of an HTML element. Normally, this yields the
+calculated size of the element. However, if 'getFromStyle' is
+true, the style is obtained directly from the CSS style.
+						
+						
+					</div>
+					
+					
+					
+						
+							<dl class="detailList">
+							<dt class="heading">Parameters:</dt>
+							
+								<dt>
+									<span class="light fixedFont">{HTMLElement}</span> <b>htmlElement</b>
+									
+								</dt>
+								<dd>the HTML element</dd>
+							
+								<dt>
+									<span class="light fixedFont">{<a href="../symbols/DwtPoint.html">DwtPoint</a>}</span> <b>point</b>
+									
+								</dt>
+								<dd>if given, reuse this point</dd>
+							
+								<dt>
+									<span class="light fixedFont">{Boolean}</span> <b>getFromStyle</b>
+									
+								</dt>
+								<dd>whether to use the calculated size</dd>
+							
+							</dl>
+						
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">Returns:</dt>
+							
+								<dd><span class="light fixedFont">{<a href="../symbols/DwtPoint.html">DwtPoint</a>}</span> the elements size, margins included</dd>
+							
+							</dl>
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">See:</dt>
+							
+								<dd><a href="#getBounds">#getBounds</a></dd>
+							
+								<dd><a href="#setBounds">#setBounds</a></dd>
+							
+								<dd><a href="#getInsetBounds">#getInsetBounds</a></dd>
+							
+								<dd><a href="#getLocation">#getLocation</a></dd>
+							
+								<dd><a href="#getOuterSize">#getOuterSize</a></dd>
+							
+							</dl>
+						
+
+					<hr />
+				
+					<a name=".getWindowSize"> </a>
+					<div class="fixedFont">&lt;static&gt; 
+					
+					<span class="light">{<a href="../symbols/DwtPoint.html">DwtPoint</a>}</span>
+					<span class="light">Dwt.</span><b>getWindowSize</b>(point)
+					
+					</div>
+					<div class="description">
+						Gets the window size of the browser.
+						
+						
+					</div>
+					
+					
+					
+						
+							<dl class="detailList">
+							<dt class="heading">Parameters:</dt>
+							
+								<dt>
+									<span class="light fixedFont">{<a href="../symbols/DwtPoint.html">DwtPoint</a>}</span> <b>point</b>
+									
+								</dt>
+								<dd>the point to hold the windows x/y size</dd>
+							
+							</dl>
+						
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">Returns:</dt>
+							
+								<dd><span class="light fixedFont">{<a href="../symbols/DwtPoint.html">DwtPoint</a>}</span> the point holding the window x/y size</dd>
+							
+							</dl>
+						
+						
+						
+
+					<hr />
+				
+					<a name=".getZIndex"> </a>
+					<div class="fixedFont">&lt;static&gt; 
+					
+					<span class="light">{number}</span>
+					<span class="light">Dwt.</span><b>getZIndex</b>(getFromStyle, getFromStyle)
+					
+					</div>
+					<div class="description">
+						Get the z-index of an element.
+						
+						
+					</div>
+					
+					
+					
+						
+							<dl class="detailList">
+							<dt class="heading">Parameters:</dt>
+							
+								<dt>
+									<span class="light fixedFont">{boolean}</span> <b>getFromStyle</b>
+									
+								</dt>
+								<dd>get the value from the style attribute of
+                                 this element, or a parent</dd>
+							
+								<dt>
+									<b>getFromStyle</b>
+									
+								</dt>
+								<dd></dd>
+							
+							</dl>
+						
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">Returns:</dt>
+							
+								<dd><span class="light fixedFont">{number}</span> the z-index value</dd>
+							
+							</dl>
+						
+						
+						
+
+					<hr />
+				
+					<a name=".hasClass"> </a>
+					<div class="fixedFont">&lt;static&gt; 
+					
+					
+					<span class="light">Dwt.</span><b>hasClass</b>(el, className)
+					
+					</div>
+					<div class="description">
+						Returns true if the specified element has the given class.
+						
+						
+					</div>
+					
+					
+					
+						
+							<dl class="detailList">
+							<dt class="heading">Parameters:</dt>
+							
+								<dt>
+									<b>el</b>
+									
+								</dt>
+								<dd></dd>
+							
+								<dt>
+									<b>className</b>
+									
+								</dt>
+								<dd></dd>
+							
+							</dl>
+						
+						
+						
+						
+						
+						
+						
+
+					<hr />
+				
+					<a name=".insertText"> </a>
+					<div class="fixedFont">&lt;static&gt; 
+					
+					
+					<span class="light">Dwt.</span><b>insertText</b>(input, text)
+					
+					</div>
+					<div class="description">
+						Inserts some text into an input at the caret.
+						
+						
+					</div>
+					
+					
+					
+						
+							<dl class="detailList">
+							<dt class="heading">Parameters:</dt>
+							
+								<dt>
+									<span class="light fixedFont">{Element}</span> <b>input</b>
+									
+								</dt>
+								<dd>INPUT or TEXTAREA</dd>
+							
+								<dt>
+									<span class="light fixedFont">{String}</span> <b>text</b>
+									
+								</dt>
+								<dd>text to insert</dd>
+							
+							</dl>
+						
+						
+						
+						
+						
+						
+						
+
+					<hr />
+				
+					<a name=".isAncestor"> </a>
+					<div class="fixedFont">&lt;static&gt; 
+					
+					
+					<span class="light">Dwt.</span><b>isAncestor</b>(el1, el2)
+					
+					</div>
+					<div class="description">
+						Returns true if el1 is an ancestor (in the parent chain) of el2, or if
+el1 and el2 are the same element.
+						
+						
+					</div>
+					
+					
+					
+						
+							<dl class="detailList">
+							<dt class="heading">Parameters:</dt>
+							
+								<dt>
+									<span class="light fixedFont">{DOMElement}</span> <b>el1</b>
+									
+								</dt>
+								<dd></dd>
+							
+								<dt>
+									<span class="light fixedFont">{DOMElement}</span> <b>el2</b>
+									
+								</dt>
+								<dd></dd>
+							
+							</dl>
+						
+						
+						
+						
+						
+						
+						
+
+					<hr />
+				
+					<a name=".moveCursorToEnd"> </a>
+					<div class="fixedFont">&lt;static&gt; 
+					
+					
+					<span class="light">Dwt.</span><b>moveCursorToEnd</b>(input)
+					
+					</div>
+					<div class="description">
+						Move cursor to the end of an input.
+						
+						
+					</div>
+					
+					
+					
+						
+							<dl class="detailList">
+							<dt class="heading">Parameters:</dt>
+							
+								<dt>
+									<span class="light fixedFont">{input}</span> <b>input</b>
+									
+								</dt>
+								<dd>text input</dd>
+							
+							</dl>
+						
+						
+						
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">See:</dt>
+							
+								<dd><a href="#getSelectionStart">#getSelectionStart</a></dd>
+							
+								<dd><a href="#getSelectionEnd">#getSelectionEnd</a></dd>
+							
+								<dd><a href="#setSelectionText">#setSelectionText</a></dd>
+							
+								<dd><a href="#setSelectionRange">#setSelectionRange</a></dd>
+							
+							</dl>
+						
+
+					<hr />
+				
+					<a name=".parseHtmlFragment"> </a>
+					<div class="fixedFont">&lt;static&gt; 
+					
+					<span class="light">{HTMLElement}</span>
+					<span class="light">Dwt.</span><b>parseHtmlFragment</b>(html, isRow)
+					
+					</div>
+					<div class="description">
+						Creates and returns an element from a string of HTML.
+						
+						
+					</div>
+					
+					
+					
+						
+							<dl class="detailList">
+							<dt class="heading">Parameters:</dt>
+							
+								<dt>
+									<span class="light fixedFont">{string}</span> <b>html</b>
+									
+								</dt>
+								<dd>the HTML text</dd>
+							
+								<dt>
+									<span class="light fixedFont">{boolean}</span> <b>isRow</b>
+									
+								</dt>
+								<dd>if <code>true</code>, if the element is a <code>&lt;tr&gt;</code></dd>
+							
+							</dl>
+						
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">Returns:</dt>
+							
+								<dd><span class="light fixedFont">{HTMLElement}</span> an HTMLElement with the <code>html</code> as its content. if <code>isRow</code>
+		is <code>true</code>, then the element will be a table</dd>
+							
+							</dl>
+						
+						
+						
+
+					<hr />
+				
+					<a name=".printPerfMetric"> </a>
+					<div class="fixedFont">&lt;static&gt; 
+					
+					
+					<span class="light">Dwt.</span><b>printPerfMetric</b>()
+					
+					</div>
+					<div class="description">
+						Prints the computed time from performance metrics data
+						
+						
+					</div>
+					
+					
+					
+						
+						
+						
+						
+						
+						
+						
+
+					<hr />
+				
+					<a name=".setBounds"> </a>
+					<div class="fixedFont">&lt;static&gt; 
+					
+					
+					<span class="light">Dwt.</span><b>setBounds</b>(htmlElement, x, y, width, height)
+					
+					</div>
+					<div class="description">
+						Sets the bounds of an HTML element. The position type of the element must
+be absolute or else an exception is thrown. To omit setting a value set the
+actual parameter value to <i>Dwt.DEFAULT</i>
+						
+						
+					</div>
+					
+					
+					
+						
+							<dl class="detailList">
+							<dt class="heading">Parameters:</dt>
+							
+								<dt>
+									<span class="light fixedFont">{HTMLElement}</span> <b>htmlElement</b>
+									
+								</dt>
+								<dd>absolutely positioned HTML element</dd>
+							
+								<dt>
+									<span class="light fixedFont">{number|string}</span> <b>x</b>
+									
+								</dt>
+								<dd>the x coordinate of the element (for example: 10, "10px", <a href="../symbols/Dwt.html#.DEFAULT">Dwt.DEFAULT</a>)</dd>
+							
+								<dt>
+									<span class="light fixedFont">{number|string}</span> <b>y</b>
+									
+								</dt>
+								<dd>the y coordinate of the element (for example: 10, "10px", <a href="../symbols/Dwt.html#.DEFAULT">Dwt.DEFAULT</a>)</dd>
+							
+								<dt>
+									<span class="light fixedFont">{number}</span> <b>width</b>
+									
+								</dt>
+								<dd>the width of the element (for example: 100, "100px", "75%", <a href="../symbols/Dwt.html#.DEFAULT">Dwt.DEFAULT</a>)</dd>
+							
+								<dt>
+									<span class="light fixedFont">{number}</span> <b>height</b>
+									
+								</dt>
+								<dd>the height of the element  (for example: 100, "100px", "75%", <a href="../symbols/Dwt.html#.DEFAULT">Dwt.DEFAULT</a>)</dd>
+							
+							</dl>
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">Throws:</dt>
+							
+								<dt>
+									 <b></b>
+								</dt>
+								<dd>DwtException</dd>
+							
+							</dl>
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">See:</dt>
+							
+								<dd><a href="#getBounds">#getBounds</a></dd>
+							
+								<dd><a href="#setLocation">#setLocation</a></dd>
+							
+								<dd><a href="#setSize">#setSize</a></dd>
+							
+							</dl>
+						
+
+					<hr />
+				
+					<a name=".setCursor"> </a>
+					<div class="fixedFont">&lt;static&gt; 
+					
+					
+					<span class="light">Dwt.</span><b>setCursor</b>(htmlElement, cursorName)
+					
+					</div>
+					<div class="description">
+						Sets an HTML element cursor.
+						
+						
+					</div>
+					
+					
+					
+						
+							<dl class="detailList">
+							<dt class="heading">Parameters:</dt>
+							
+								<dt>
+									<span class="light fixedFont">{HTMLElement}</span> <b>htmlElement</b>
+									
+								</dt>
+								<dd>the element for which to set the cursor</dd>
+							
+								<dt>
+									<span class="light fixedFont">{string}</span> <b>cursorName</b>
+									
+								</dt>
+								<dd>name of the new cursor</dd>
+							
+							</dl>
+						
+						
+						
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">See:</dt>
+							
+								<dd><a href="#setCursor">#setCursor</a></dd>
+							
+							</dl>
+						
+
+					<hr />
+				
+					<a name=".setLoadedTime"> </a>
+					<div class="fixedFont">&lt;static&gt; 
+					
+					
+					<span class="light">Dwt.</span><b>setLoadedTime</b>(id, date)
+					
+					</div>
+					<div class="description">
+						Sets up a hidden div for performance metrics.  Use to set the end of object rendering
+						
+						
+					</div>
+					
+					
+					
+						
+							<dl class="detailList">
+							<dt class="heading">Parameters:</dt>
+							
+								<dt>
+									<b>id</b>
+									
+								</dt>
+								<dd>{String}</dd>
+							
+								<dt>
+									<b>date</b>
+									
+								</dt>
+								<dd>{Date}</dd>
+							
+							</dl>
+						
+						
+						
+						
+						
+						
+						
+
+					<hr />
+				
+					<a name=".setLoadingTime"> </a>
+					<div class="fixedFont">&lt;static&gt; 
+					
+					
+					<span class="light">Dwt.</span><b>setLoadingTime</b>(id, date)
+					
+					</div>
+					<div class="description">
+						Sets up a hidden div for performance metrics.  Use to set the start of object rendering
+						
+						
+					</div>
+					
+					
+					
+						
+							<dl class="detailList">
+							<dt class="heading">Parameters:</dt>
+							
+								<dt>
+									<b>id</b>
+									
+								</dt>
+								<dd>{String}</dd>
+							
+								<dt>
+									<b>date</b>
+									
+								</dt>
+								<dd>{Date}</dd>
+							
+							</dl>
+						
+						
+						
+						
+						
+						
+						
+
+					<hr />
+				
+					<a name=".setLocation"> </a>
+					<div class="fixedFont">&lt;static&gt; 
+					
+					
+					<span class="light">Dwt.</span><b>setLocation</b>(htmlElement, x, y)
+					
+					</div>
+					<div class="description">
+						Sets the location of an HTML element. The position type of the element must
+be absolute or else an exception is thrown. To only set one of the coordinates,
+pass in a value of <a href="../symbols/Dwt.html#.DEFAULT">Dwt.DEFAULT</a> for the coordinate for which the value is
+not to be set
+						
+						
+					</div>
+					
+					
+					
+						
+							<dl class="detailList">
+							<dt class="heading">Parameters:</dt>
+							
+								<dt>
+									<span class="light fixedFont">{HTMLElement}</span> <b>htmlElement</b>
+									
+								</dt>
+								<dd>the absolutely positioned HTML element</dd>
+							
+								<dt>
+									<span class="light fixedFont">{number|string}</span> <b>x</b>
+									
+								</dt>
+								<dd>the x coordinate of the element (for example: 10, "10px", <a href="../symbols/Dwt.html#.DEFAULT">Dwt.DEFAULT</a>)</dd>
+							
+								<dt>
+									<span class="light fixedFont">{number|string}</span> <b>y</b>
+									
+								</dt>
+								<dd>the y coordinate of the element (for example: 10, "10px", <a href="../symbols/Dwt.html#.DEFAULT">Dwt.DEFAULT</a>)</dd>
+							
+							</dl>
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">Throws:</dt>
+							
+								<dt>
+									 <b></b>
+								</dt>
+								<dd>DwtException</dd>
+							
+							</dl>
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">See:</dt>
+							
+								<dd><a href="#getLocation">#getLocation</a></dd>
+							
+								<dd><a href="#setBounds">#setBounds</a></dd>
+							
+								<dd><a href="#setSize">#setSize</a></dd>
+							
+							</dl>
+						
+
+					<hr />
+				
+					<a name=".setScrollStyle"> </a>
+					<div class="fixedFont">&lt;static&gt; 
+					
+					
+					<span class="light">Dwt.</span><b>setScrollStyle</b>(htmlElement, scrollStyle)
+					
+					</div>
+					<div class="description">
+						Sets the <code>htmlElement</code>'s scroll style. The scroll style determines the elements's
+behaviour when content overflows its div's boundaries. Possible values are:
+<ul>
+<li><i>Dwt.CLIP</i> - Clip on overflow</li>
+<li><i>Dwt.VISIBLE</i> - Allow overflow to be visible</li>
+<li><i>Dwt.SCROLL</i> - Automatically create scrollbars if content overflows</li>
+<li><i>Dwt.FIXED_SCROLL</i> - Always have scrollbars whether content overflows or not</li>
+</ul>
+						
+						
+					</div>
+					
+					
+					
+						
+							<dl class="detailList">
+							<dt class="heading">Parameters:</dt>
+							
+								<dt>
+									<span class="light fixedFont">{HTMLElement}</span> <b>htmlElement</b>
+									
+								</dt>
+								<dd>HTML element</dd>
+							
+								<dt>
+									<span class="light fixedFont">{<a href="../symbols/Dwt.html#.CLIP">Dwt.CLIP</a>|<a href="../symbols/Dwt.html#.VISIBLE">Dwt.VISIBLE</a>|<a href="../symbols/Dwt.html#.SCROLL">Dwt.SCROLL</a>|<a href="../symbols/Dwt.html#.FIXED_SCROLL">Dwt.FIXED_SCROLL</a>}</span> <b>scrollStyle</b>
+									
+								</dt>
+								<dd>the elements scroll style</dd>
+							
+							</dl>
+						
+						
+						
+						
+						
+						
+						
+
+					<hr />
+				
+					<a name=".setSelectionRange"> </a>
+					<div class="fixedFont">&lt;static&gt; 
+					
+					
+					<span class="light">Dwt.</span><b>setSelectionRange</b>(input, start, end)
+					
+					</div>
+					<div class="description">
+						Sets the selection range.
+						
+						
+					</div>
+					
+					
+					
+						
+							<dl class="detailList">
+							<dt class="heading">Parameters:</dt>
+							
+								<dt>
+									<span class="light fixedFont">{input|iframe}</span> <b>input</b>
+									
+								</dt>
+								<dd>input for which to find the selection start point. This
+		may be a text input field or an iframe in design mode</dd>
+							
+								<dt>
+									<span class="light fixedFont">{number}</span> <b>start</b>
+									
+								</dt>
+								<dd>the starting position</dd>
+							
+								<dt>
+									<span class="light fixedFont">{number}</span> <b>end</b>
+									
+								</dt>
+								<dd>the ending position</dd>
+							
+							</dl>
+						
+						
+						
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">See:</dt>
+							
+								<dd><a href="#getSelectionStart">#getSelectionStart</a></dd>
+							
+								<dd><a href="#getSelectionEnd">#getSelectionEnd</a></dd>
+							
+								<dd><a href="#setSelectionText">#setSelectionText</a></dd>
+							
+								<dd><a href="#moveCursorToEnd">#moveCursorToEnd</a></dd>
+							
+							</dl>
+						
+
+					<hr />
+				
+					<a name=".setSelectionText"> </a>
+					<div class="fixedFont">&lt;static&gt; 
+					
+					
+					<span class="light">Dwt.</span><b>setSelectionText</b>(input, text)
+					
+					</div>
+					<div class="description">
+						Sets the selection text
+						
+						
+					</div>
+					
+					
+					
+						
+							<dl class="detailList">
+							<dt class="heading">Parameters:</dt>
+							
+								<dt>
+									<span class="light fixedFont">{input|iframe}</span> <b>input</b>
+									
+								</dt>
+								<dd>the input for which to set the selection text. This
+		may be a text input field or an iframe in design mode</dd>
+							
+								<dt>
+									<span class="light fixedFont">{string}</span> <b>text</b>
+									
+								</dt>
+								<dd>the text to set as the selection</dd>
+							
+							</dl>
+						
+						
+						
+						
+						
+						
+						
+							<dl class="detailList">
+							<dt class="heading">See:</dt>
+							
+								<dd><a href="#getSelectionStart">#getSelectionStart</a></dd>
+							
+								<dd><a href="#getSelectionEnd">#getSelectionEnd</a></dd>
+							
+								<dd><a href="#setSelectionRange">#setSelectionRange</a></dd>
+							
+								<dd><a href="#moveCursorToEnd">#moveCursorToEnd</a></dd>
+							
+							</dl>
+						
+
+					
+				
+			
+			
+<!-- ============================== event details ========================= -->		
+			
+			
+			<hr />
+		</div>
+		</td>
+	</tr>
+	<tr>
+		<td colspan="2">
+		
+<!-- ============================== footer ================================= -->
+		<div class="fineprint" style="clear:both">
+			
+			Documentation generated by <a href="http://code.google.com/p/jsdoc-toolkit/" target="_blankt">JsDoc Toolkit</a> 2.3.0 on Tue Jun 28 2016 21:01:25 GMT-0400 (EDT)
+		</div>
+		</td>
+	</tr>
+	</table>
+	<script type="text/javascript">
+	var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+	document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+	</script>
+	<script type="text/javascript">
+	try {
+	var pageTracker = _gat._getTracker("UA-228165-10");
+	pageTracker._trackPageview();
+	} catch(err) {}</script>
+	</body>
+</html>
